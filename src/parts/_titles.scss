@@ -1,0 +1,38 @@
+@mixin css
+{
+    //############## TITLES ##############
+
+    .page-title
+    {
+        background-color: var(--pageTitle-background);
+        color: var(--pageTitle-foreground);
+        padding: 1rem 1.5rem;
+        font-size: 1.5em;
+        margin: var(--size-sm) 0 0;
+
+        .btn-icon
+        {
+            color: var(--pageTitle-foreground);
+        }
+    }
+
+    .section-title
+    {
+        margin-bottom: var(--size-xs);
+        margin-left: var(--size-xs);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 1.05em;
+    }
+
+    .subsection-title
+    {
+        margin-bottom: var(--size-xs);
+        margin-left: var(--size-xs);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 0.9em;
+    }
+}

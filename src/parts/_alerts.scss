@@ -1,0 +1,30 @@
+@mixin css
+{
+    //############## ALERTS ##############
+
+    .alert
+    {
+        padding: var(--size-6px) var(--size-8px);
+        border-radius: var(--border-radius);
+        border-width: var(--size-1px);
+        margin-top: var(--size-10px);
+        margin-right: var(--size-10px);
+        border-style: solid;
+    }
+
+    @include generate-alert(('info', 'warning', 'success', 'danger', 'error'));
+}
+
+@mixin generate-alert($alerts)
+{
+    @each $alert in $alerts
+    {
+        .alert-#{$alert}
+        {
+            background-color: var(--alert-#{$alert}-background);
+            backdrop-filter: brigthness(86%);
+            color: var(--alert-#{$alert}-foreground);
+            border-color: var(--alert-#{$alert}-background);
+        }
+    }
+}

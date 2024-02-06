@@ -1,0 +1,7 @@
+/.vscode
+appveyor.yml
+ngv.config.json
+
+*~
+*.orig
+*.log

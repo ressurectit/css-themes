@@ -1,0 +1,122 @@
+@use '@css-styles/common';
+
+@mixin css
+{
+    //############## GRID ##############
+
+    [nggrid]
+    {
+        .matrix-content-renderer
+        {
+            @extend %flex-1, %flex-column;
+        }
+
+        .grid-container-css-grid
+        {
+            @extend %thin-scrollbar;
+
+            overflow-x: auto;
+        }
+
+        .grid-container-css-grid,
+        .grid-body-css-grid
+        {
+            @extend %min-height-none;
+        }
+
+        .grid-body-css-grid
+        {
+            @extend %thin-scrollbar;
+
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .grid-header-css-grid
+        {
+            border-top-left-radius: var(--border-radius);
+            border-top-right-radius: var(--border-radius);;
+            background-color: var(--grid-header-background);
+            color: var(--grid-header-foreground);
+        }
+
+        .grid-header-row-css-grid
+        {
+            padding: var(--size-6px) var(--size-10px);
+
+            &>div
+            {
+                white-space: nowrap;
+                display: flex;
+
+                &>span:first-child
+                {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    min-width: 0;
+                    flex: 1;
+                }
+            }
+        }
+        
+        .grid-content-row-css-grid
+        {
+            padding: var(--size-4px) var(--size-10px);
+
+            &>div
+            {
+                min-width: 0;
+            }
+        }
+
+        .grid-content-row-css-grid,
+        .grid-header-row-css-grid
+        {
+            &>div
+            {
+                padding: 0 var(--size-3px);
+
+                &>span.fa
+                {
+                    margin-left: var(--size-3px);
+                }
+            }
+        }
+
+        .grid-content-row-css-grid
+        {
+            &:nth-child(odd)
+            {
+                background-color: var(--grid-oddRow-background);
+                color: var(--grid-oddRow-foreground);
+            }
+
+            &:nth-child(even)
+            {
+                background-color: var(--grid-evenRow-background);
+                color: var(--grid-evenRow-foreground);
+            }
+        }
+
+        ng-basic-paging
+        {
+            margin-top: var(--size-sm);
+
+            .items-per-page,
+            .pages
+            {
+                a
+                {
+                    margin: var(--paging-margin);
+                    border: 1px solid var(--paging-border);
+                    border-radius: var(--paging-borderRadius);
+
+                    &.active
+                    {
+                        border: 1px solid var(--paging-active-border);
+                    }
+                }
+            }
+        }
+    }
+}

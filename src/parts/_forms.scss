@@ -1,0 +1,256 @@
+@mixin css
+{
+    //############## CONTROL LABEL ##############
+
+    .control-label
+    {
+        display: block;
+        font-size: var(--label-font-size);
+        font-weight: var(--label-font-weight);
+        margin: var(--label-margin);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    //############## FORM CONTROL ##############
+
+    %form-control
+    {
+        border-radius: var(--border-radius);
+        border-style: solid;
+        border-width: 1px;
+        box-shadow: none;
+        font-size: 1em;
+        padding: var(--input-padding);
+        width: 100%;
+        font-family: var(--font-family);
+        color: var(--input-foreground);
+        border-color: var(--input-border);
+        background-color: var(--input-background);
+
+        &::placeholder
+        {
+            color: var(--input-placeholder);
+            opacity: .8;
+        }
+
+        &:disabled,
+        &.disabled
+        {
+            background-color: var(--input-disabled-background);
+            color: var(--input-disabled-foreground);
+            border-color: var(--input-disabled-border);
+        }
+    }
+
+    .form-group
+    {
+        margin: var(--formGroup-margin);
+    }
+
+    .form-control:not(ng-select)
+    {
+        @extend %form-control;
+    }
+
+    div,
+    span
+    {
+        &.form-control::after
+        {
+            content: '\00a0';
+        }
+    }
+
+    .form-control-static
+    {
+        padding: var(--size-3px);
+        padding-left: var(--size-3px);
+        padding-left: var(--size-7px);
+        margin-bottom: 0.9em;
+        color: var(--input-foreground);
+    }
+
+    ng-select.form-control
+    {
+        .form-control-select
+        {
+            @extend %form-control;
+
+            display: flex;
+            
+            .selected-value
+            {
+                flex: 1;
+                text-align: left;
+                min-width: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .edit-wrapper-div
+            {
+                margin-bottom: calc(-1 * var(--size-1px));
+            }
+
+            .select-input
+            {
+                border: none;
+                padding: 0;
+                font-size: 1em;
+                width: 100%;
+
+                &::placeholder
+                {
+                    color: var(--input-placeholder);
+                    opacity: .8;
+                }
+            }
+
+            .cancel-selected
+            {
+                padding: 0 var(--size-2px);
+            }
+
+            .selected-multi-value
+            {
+                font-size: var(--select-tag-fontSize);
+                padding: var(--select-tag-padding);
+                background: var(--select-tag-background);
+                color: var(--select-tag-foreground);
+            }
+        }
+
+        .popup-div
+        {
+            max-height: 45vh;
+        }
+    }
+
+    //############## INPUT GROUP ##############
+
+    .input-group
+    {
+        display: flex;
+        flex-direction: row;
+
+        .input-group-addon
+        {
+            color: var(--input-groupAddon-foreground);
+            background-color: var(--input-groupAddon-background);
+            border-color: var(--input-border);
+            align-self: center;
+            padding: var(--input-groupAddon-padding);
+            border-top-style: solid;
+            border-bottom-style: solid;
+            border-top-width: var(--size-1px);
+            border-bottom-width: var(--size-1px);
+
+            &:first-child
+            {
+                border-left-width: var(--size-1px);
+                border-left-style: solid;
+                border-top-left-radius: var(--size-4px);
+                border-bottom-left-radius: var(--size-4px);
+            }
+
+            &:last-child
+            {
+                border-right-width: var(--size-1px);
+                border-right-style: solid;
+                border-top-right-radius: var(--size-4px);
+                border-bottom-right-radius: var(--size-4px);
+            }
+        }
+
+        .form-control
+        {
+            flex: 1;
+            min-width: 0;
+            min-height: 0;
+            border-radius: 0;
+
+            &:first-child
+            {
+                border-top-left-radius: var(--size-4px);
+                border-bottom-left-radius: var(--size-4px);
+            }
+
+            &:last-child
+            {
+                border-top-right-radius: var(--size-4px);
+                border-bottom-right-radius: var(--size-4px);
+            }
+        }
+    }
+
+    //############## FORM ERRORS ##############
+
+    .has-error
+    {
+        %control-error
+        {
+            outline-color: transparent;
+            outline-style: solid;
+            outline-width: var(--size-2px);
+            border-color: var(--input-invalid-border);
+
+            &:active,
+            &:focus
+            {
+                outline-color: var(--input-error-outline);
+            }
+        }
+
+        .control-label
+        {
+            color: var(--label-invalid-foreground);
+        }
+
+        .form-control:not(ng-select)
+        {
+            @extend %control-error;
+        }
+
+        ng-select.form-control
+        {
+            .normal-state button.btn-select
+            {
+                @extend %control-error;
+
+                display: flex;
+            }
+
+            .edit-normal-state div.btn-select
+            {
+                @extend %control-error;
+
+                display: flex;
+            }
+        }
+    }
+
+    .validation-error-div
+    {
+        font-size: 0.7em;
+
+        &>div
+        {
+            color: var(--label-invalid-background);
+        }
+    }
+
+    .form-error
+    {
+        list-style: square;
+        display: list-item;
+        margin-left: var(--size-14px);
+    }
+
+    reserved-space-validation-errors-container>div
+    {
+        min-height: .9em;
+    }
+}
