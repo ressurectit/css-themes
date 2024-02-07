@@ -7,36 +7,36 @@
 
 //############## FONT ##############
 
-$defaultFontSize: 14px;
+$_defaultFontSize: 14px;
 
 //############## AVAILABLE COLORS ##############
 
-$white: #ffffff;
-$black: #111111;
+$_white: #ffffff;
+$_black: #111111;
 
-$gray-0: #e5e5e5;
-$gray-1: #e0e0e0;
-$gray-2: #cccccc;
-$gray-3: #aaaaaa;
-$gray-4: #9d9d9d;
-$gray-5: #737373;
-$gray-6: #555555;
-$gray-7: #444444;
-$gray-8: #383838;
-$gray-9: #1e1e1e;
+$_gray-0: #e5e5e5;
+$_gray-1: #e0e0e0;
+$_gray-2: #cccccc;
+$_gray-3: #aaaaaa;
+$_gray-4: #9d9d9d;
+$_gray-5: #737373;
+$_gray-6: #555555;
+$_gray-7: #444444;
+$_gray-8: #383838;
+$_gray-9: #1e1e1e;
 
-$almostWhite: #f5f5f5;
-$green: #6aba4f;
-$lightBlue: #5bc0de;
-$blue: #337ab7;
-$azure: #00a3e0;
-$red: #ec0e0e;
-$orangeRed: #e45514;
-$orange: #e4a256;
-$yellowGreen: #bbdd4f;
-$yellow: #d4da03;
-$brown: #6b4b02;
-$transparentBlack: #00000066;
+$_almostWhite: #f5f5f5;
+$_green: #6aba4f;
+$_lightBlue: #5bc0de;
+$_blue: #337ab7;
+$_azure: #00a3e0;
+$_red: #ec0e0e;
+$_orangeRed: #e45514;
+$_orange: #e4a256;
+$_yellowGreen: #bbdd4f;
+$_yellow: #d4da03;
+$_brown: #6b4b02;
+$_transparentBlack: #00000066;
 
 //############## DEFAULT THEME ##############
 
@@ -45,109 +45,109 @@ $_defaultTheme:
     fontFamily: 'Inter',
     page:
     (
-        background: $white,
-        foreground: $black,
-        scrollbar: color.scale($white, $lightness: 14%),
+        background: $_white,
+        foreground: $_black,
+        scrollbar: color.scale($_white, $lightness: 14%),
     ),
     primary:
     (
-        background: $gray-0,
-        foreground: $black,
-        scrollbar: color.scale($gray-0, $lightness: 14%),
+        background: $_gray-0,
+        foreground: $_black,
+        scrollbar: color.scale($_gray-0, $lightness: 14%),
     ),
     secondary:
     (
-        background: $gray-7,
-        foreground: $white,
-        scrollbar: color.scale($gray-7, $lightness: 14%),
+        background: $_gray-7,
+        foreground: $_white,
+        scrollbar: color.scale($_gray-7, $lightness: 14%),
     ),
     block:
     (
-        background: $white,
-        foreground: $black,
-        scrollbar: color.scale($white, $lightness: 14%),
+        background: $_white,
+        foreground: $_black,
+        scrollbar: color.scale($_white, $lightness: 14%),
     ),
     pageTitle:
     (
-        background: $gray-8,
-        foreground: $gray-1,
+        background: $_gray-8,
+        foreground: $_gray-1,
     ),
     mainMenu:
     (
-        background: $orangeRed,
-        backgroundGradient: color.scale($gray-0, $lightness: -6%, $saturation: 10%),
-        backgroundGradient2: color.scale($gray-0, $lightness: -12%, $saturation: 2%),
-        foreground: $gray-6,
+        background: $_orangeRed,
+        backgroundGradient: color.scale($_gray-0, $lightness: -6%, $saturation: 10%),
+        backgroundGradient2: color.scale($_gray-0, $lightness: -12%, $saturation: 2%),
+        foreground: $_gray-6,
         active:
         (
-            foreground: $white,
+            foreground: $_white,
             background: inherit,
         ),
         drawer:
         (
-            background: $white,
-            foreground: $black,
+            background: $_white,
+            foreground: $_black,
         )
     ),
     dialog:
     (
-        border: $gray-7,
+        border: $_gray-7,
         title:
         (
-            background: $gray-8,
-            foreground: $gray-0,
+            background: $_gray-8,
+            foreground: $_gray-0,
         ),
         content:
         (
-            background: $white,
-            foreground: $black,
+            background: $_white,
+            foreground: $_black,
         ),
         closeButton:
         (
             hover:
             (
-                background: color.scale($gray-8, $lightness: 10%),
-                foreground: color.scale($gray-0, $lightness: 10%),
+                background: color.scale($_gray-8, $lightness: 10%),
+                foreground: color.scale($_gray-0, $lightness: 10%),
             ),
         ),
     ),
     input:
     (
-        background: $white,
-        foreground: $gray-6,
-        border: $gray-3,
-        padding: mixins.getSize($defaultFontSize, 5) mixins.getSize($defaultFontSize, 12),
-        placeholder: $gray-4,
+        background: $_white,
+        foreground: $_gray-6,
+        border: $_gray-3,
+        padding: mixins.getSize($_defaultFontSize, 5) mixins.getSize($_defaultFontSize, 12),
+        placeholder: $_gray-4,
         groupAddon:
         (
-            background: color.scale($gray-0, $lightness: 30%),
+            background: color.scale($_gray-0, $lightness: 30%),
             foreground: inherit,
-            padding: mixins.getSize($defaultFontSize, 5) mixins.getSize($defaultFontSize, 4),
+            padding: mixins.getSize($_defaultFontSize, 5) mixins.getSize($_defaultFontSize, 4),
         ),
         disabled:
         (
-            background: $gray-4,
-            foreground: $gray-6,
-            border: $gray-3,
+            background: $_gray-4,
+            foreground: $_gray-6,
+            border: $_gray-3,
         ),
         invalid:
         (
-            border: $red,
+            border: $_red,
         ),
         error:
         (
             background: inherit,
-            foreground: $red,
-            outline: $red,
+            foreground: $_red,
+            outline: $_red,
         ),
     ),
     formGroup:
     (
-        margin: 0 mixins.getSize($defaultFontSize, 10) mixins.getSize($defaultFontSize, 10) 0,
+        margin: 0 mixins.getSize($_defaultFontSize, 10) mixins.getSize($_defaultFontSize, 10) 0,
     ),
     label:
     (
-        margin: 0 0 mixins.getSize($defaultFontSize, 2),
+        margin: 0 0 mixins.getSize($_defaultFontSize, 2),
         font:
         (
             size: 1em,
@@ -155,7 +155,7 @@ $_defaultTheme:
         ),
         invalid:
         (
-            foreground: $red,
+            foreground: $_red,
             background: inherit,
         ),
     ),
@@ -163,9 +163,9 @@ $_defaultTheme:
     (
         tag:
         (
-            background: $azure,
-            foreground: $black,
-            padding: mixins.getSize($defaultFontSize * .8, 1) mixins.getSize($defaultFontSize * .8, 3),
+            background: $_azure,
+            foreground: $_black,
+            padding: mixins.getSize($_defaultFontSize * .8, 1) mixins.getSize($_defaultFontSize * .8, 3),
             fontSize: .8em,
         ),
     ),
@@ -173,69 +173,69 @@ $_defaultTheme:
     (
         header:
         (
-            background: $gray-8,
-            foreground: $white,
+            background: $_gray-8,
+            foreground: $_white,
         ),
         evenRow:
         (
-            background: $white,
+            background: $_white,
             foreground: inherit,
         ),
         oddRow:
         (
-            background: $gray-0,
+            background: $_gray-0,
             foreground: inherit,
         ),
     ),
     separator:
     (
         background: inherit,
-        foreground: $gray-6,
+        foreground: $_gray-6,
     ),
     level:
     (
-        succes: $green,
-        info: $lightBlue,
-        warning: $orange,
-        error: $red,
-        default: $gray-5,
+        succes: $_green,
+        info: $_lightBlue,
+        warning: $_orange,
+        error: $_red,
+        default: $_gray-5,
     ),
     weight:
     (
-        foreground: $white,
-        weight-0: $green,
-        weight-1: $yellowGreen,
-        weight-2: $yellow,
-        weight-3: $orange,
-        weight-4: $orangeRed,
-        weight-5: $red,
+        foreground: $_white,
+        weight-0: $_green,
+        weight-1: $_yellowGreen,
+        weight-2: $_yellow,
+        weight-3: $_orange,
+        weight-4: $_orangeRed,
+        weight-5: $_red,
     ),
     alert:
     (
         info:
         (
-            background: $lightBlue,
-            foreground: $white,
+            background: $_lightBlue,
+            foreground: $_white,
         ),
         warning:
         (
-            background: $orange,
-            foreground: $white,
+            background: $_orange,
+            foreground: $_white,
         ),
         success:
         (
-            background: $green,
-            foreground: $white,
+            background: $_green,
+            foreground: $_white,
         ),
         danger:
         (
-            background: $red,
-            foreground: $white,
+            background: $_red,
+            foreground: $_white,
         ),
         error:
         (
-            background: $red,
-            foreground: $white,
+            background: $_red,
+            foreground: $_white,
         ),
     ),
     text:
@@ -243,82 +243,82 @@ $_defaultTheme:
         primary:
         (
             background: inherit,
-            foreground: $azure,
+            foreground: $_azure,
         ),
         danger:
         (
             background: inherit,
-            foreground: $red,
+            foreground: $_red,
         ),
         warning:
         (
             background: inherit,
-            foreground: $orange,
+            foreground: $_orange,
         ),
         success:
         (
             background: inherit,
-            foreground: $green,
+            foreground: $_green,
         ),
         info:
         (
             background: inherit,
-            foreground: $lightBlue,
+            foreground: $_lightBlue,
         ),
     ),
     button:
     (
-        spaceBetween: mixins.getSize($defaultFontSize, 10),
-        padding: mixins.getSize($defaultFontSize, 4) mixins.getSize($defaultFontSize, 10),
+        spaceBetween: mixins.getSize($_defaultFontSize, 10),
+        padding: mixins.getSize($_defaultFontSize, 4) mixins.getSize($_defaultFontSize, 10),
         textTransformation: uppercase,
         primary:
         (
-            background: $green,
-            foreground: $white,
+            background: $_green,
+            foreground: $_white,
         ),
         secondary:
         (
-            background: $gray-5,
-            foreground: $white,
+            background: $_gray-5,
+            foreground: $_white,
         ),
         info:
         (
-            background: $lightBlue,
-            foreground: $white,
+            background: $_lightBlue,
+            foreground: $_white,
         ),
         default:
         (
-            background: $gray-5,
-            foreground: $white,
+            background: $_gray-5,
+            foreground: $_white,
         ),
         success:
         (
-            background: $green,
-            foreground: $white,
+            background: $_green,
+            foreground: $_white,
         ),
         warning:
         (
-            background: $orange,
-            foreground: $white,
+            background: $_orange,
+            foreground: $_white,
         ),
         danger:
         (
-            background: $red,
-            foreground: $white,
+            background: $_red,
+            foreground: $_white,
         ),
         error:
         (
-            background: $red,
-            foreground: $white,
+            background: $_red,
+            foreground: $_white,
         ),
         icon:
         (
             background: inherit,
-            foreground: $gray-5,
+            foreground: $_gray-5,
             hover:
             (
                 background: inherit,
-                foreground: $green,
+                foreground: $_green,
             ),
         ),
     ),
@@ -326,40 +326,23 @@ $_defaultTheme:
     (
         track:
         (
-            normal: $blue,
-            hover: $lightBlue,
-            pressed: $azure,
-            focus: $lightBlue,
+            normal: $_blue,
+            hover: $_lightBlue,
+            pressed: $_azure,
+            focus: $_lightBlue,
         ),
         handle:
         (
-            normal: $blue,
-            hover: $lightBlue,
-            pressed: $azure,
-            focus: $lightBlue,
+            normal: $_blue,
+            hover: $_lightBlue,
+            pressed: $_azure,
+            focus: $_lightBlue,
         ),
-        icon: $white,
-        foreground: $gray-1,
+        icon: $_white,
+        foreground: $_gray-1,
         onPrimary:
         (
-            foreground: $black,
-        ),
-    ),
-);
-
-$paging:
-(
-    pagingCommon:
-    (
-        anchor:
-        (
-            background: $white,
-            foreground: $azure,
-            active:
-            (
-                background: $azure,
-                foreground: $white,
-            ),
+            foreground: $_black,
         ),
     ),
 );
