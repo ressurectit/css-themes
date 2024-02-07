@@ -1,8 +1,12 @@
 @use 'sass:map';
 
-@mixin buildThemeColors($theme)
+@mixin buildFontFamily($theme)
 {
     --font-family: #{map.get($theme, 'fontFamily')};
+}
+
+@mixin buildBlockTheme($theme)
+{
     --page-background: #{map.get(map.get($theme, 'page'), 'background')};
     --page-foreground: #{map.get(map.get($theme, 'page'), 'foreground')};
     --page-scrollbar: #{map.get(map.get($theme, 'page'), 'scrollbar')};
@@ -15,16 +19,28 @@
     --block-background: #{map.get(map.get($theme, 'block'), 'background')};
     --block-foreground: #{map.get(map.get($theme, 'block'), 'foreground')};
     --block-scrollbar: #{map.get(map.get($theme, 'block'), 'scrollbar')};
+}
+
+@mixin buildTitleTheme($theme)
+{
     --pageTitle-background: #{map.get(map.get($theme, 'pageTitle'), 'background')};
     --pageTitle-foreground: #{map.get(map.get($theme, 'pageTitle'), 'foreground')};
+}
+
+@mixin buildMainMenuTheme($theme)
+{
     --mainMenu-background: #{map.get(map.get($theme, 'mainMenu'), 'background')};
     --mainMenu-backgroundGradient: #{map.get(map.get($theme, 'mainMenu'), 'backgroundGradient')};
-    --mainMenu-backgroundGradientDark: #{map.get(map.get($theme, 'mainMenu'), 'backgroundGradientDark')};
+    --mainMenu-backgroundGradient2: #{map.get(map.get($theme, 'mainMenu'), 'backgroundGradient2')};
     --mainMenu-foreground: #{map.get(map.get($theme, 'mainMenu'), 'foreground')};
     --mainMenu-active-background: #{map.get(map.get(map.get($theme, 'mainMenu'), 'active'), 'background')};
     --mainMenu-active-foreground: #{map.get(map.get(map.get($theme, 'mainMenu'), 'active'), 'foreground')};
     --mainMenu-drawer-background: #{map.get(map.get(map.get($theme, 'mainMenu'), 'drawer'), 'background')};
     --mainMenu-drawer-foreground: #{map.get(map.get(map.get($theme, 'mainMenu'), 'drawer'), 'foreground')};
+}
+
+@mixin buildDialogTheme($theme)
+{
     --dialog-border: #{map.get(map.get($theme, 'dialog'), 'border')};
     --dialog-title-background: #{map.get(map.get(map.get($theme, 'dialog'), 'title'), 'background')};
     --dialog-title-foreground: #{map.get(map.get(map.get($theme, 'dialog'), 'title'), 'foreground')};
@@ -32,6 +48,10 @@
     --dialog-content-foreground: #{map.get(map.get(map.get($theme, 'dialog'), 'content'), 'foreground')};
     --dialog-closeButton-hover-background: #{map.get(map.get(map.get(map.get($theme, 'dialog'), 'closeButton'), 'hover'), 'background')};
     --dialog-closeButton-hover-foreground: #{map.get(map.get(map.get(map.get($theme, 'dialog'), 'closeButton'), 'hover'), 'foreground')};
+}
+
+@mixin buildFormsTheme($theme)
+{
     --input-background: #{map.get(map.get($theme, 'input'), 'background')};
     --input-foreground: #{map.get(map.get($theme, 'input'), 'foreground')};
     --input-border: #{map.get(map.get($theme, 'input'), 'border')};
@@ -57,12 +77,20 @@
     --select-tag-foreground: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'foreground')};
     --select-tag-padding: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'padding')};
     --select-tag-fontSize: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'fontSize')};
+}
+
+@mixin buildGridTheme($theme)
+{
     --grid-header-background: #{map.get(map.get(map.get($theme, 'grid'), 'header'), 'background')};
     --grid-header-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'header'), 'foreground')};
     --grid-evenRow-background: #{map.get(map.get(map.get($theme, 'grid'), 'evenRow'), 'background')};
     --grid-evenRow-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'evenRow'), 'foreground')};
     --grid-oddRow-background: #{map.get(map.get(map.get($theme, 'grid'), 'oddRow'), 'background')};
     --grid-oddRow-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'oddRow'), 'foreground')};
+}
+
+@mixin buildMiscTheme($theme)
+{
     --separator-background: #{map.get(map.get($theme, 'separator'), 'background')};
     --separator-foreground: #{map.get(map.get($theme, 'separator'), 'foreground')};
     --level-succes: #{map.get(map.get($theme, 'level'), 'succes')};
@@ -77,10 +105,10 @@
     --weight-weight-3: #{map.get(map.get($theme, 'weight'), 'weight-3')};
     --weight-weight-4: #{map.get(map.get($theme, 'weight'), 'weight-4')};
     --weight-weight-5: #{map.get(map.get($theme, 'weight'), 'weight-5')};
-    --paging-border: #{map.get(map.get($theme, 'paging'), 'border')};
-    --paging-margin: #{map.get(map.get($theme, 'paging'), 'margin')};
-    --paging-borderRadius: #{map.get(map.get($theme, 'paging'), 'borderRadius')};
-    --paging-active-border: #{map.get(map.get(map.get($theme, 'paging'), 'active'), 'border')};
+}
+
+@mixin buildAlertTheme($theme)
+{
     --alert-info-background: #{map.get(map.get(map.get($theme, 'alert'), 'info'), 'background')};
     --alert-info-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'info'), 'foreground')};
     --alert-warning-background: #{map.get(map.get(map.get($theme, 'alert'), 'warning'), 'background')};
@@ -91,6 +119,10 @@
     --alert-danger-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'danger'), 'foreground')};
     --alert-error-background: #{map.get(map.get(map.get($theme, 'alert'), 'error'), 'background')};
     --alert-error-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'error'), 'foreground')};
+}
+
+@mixin buildTextTheme($theme)
+{
     --text-primary-background: #{map.get(map.get(map.get($theme, 'text'), 'primary'), 'background')};
     --text-primary-foreground: #{map.get(map.get(map.get($theme, 'text'), 'primary'), 'foreground')};
     --text-info-background: #{map.get(map.get(map.get($theme, 'text'), 'info'), 'background')};
@@ -101,6 +133,10 @@
     --text-success-foreground: #{map.get(map.get(map.get($theme, 'text'), 'success'), 'foreground')};
     --text-danger-background: #{map.get(map.get(map.get($theme, 'text'), 'danger'), 'background')};
     --text-danger-foreground: #{map.get(map.get(map.get($theme, 'text'), 'danger'), 'foreground')};
+}
+
+@mixin buildButtonTheme($theme)
+{
     --button-spaceBetween: #{map.get(map.get($theme, 'button'), 'spaceBetween')};
     --button-padding: #{map.get(map.get($theme, 'button'), 'padding')};
     --button-textTransformation: #{map.get(map.get($theme, 'button'), 'textTransformation')};
@@ -124,7 +160,10 @@
     --button-icon-foreground: #{map.get(map.get(map.get($theme, 'button'), 'icon'), 'foreground')};
     --button-icon-hover-background: #{map.get(map.get(map.get(map.get($theme, 'button'), 'icon'), 'hover'), 'background')};
     --button-icon-hover-foreground: #{map.get(map.get(map.get(map.get($theme, 'button'), 'icon'), 'hover'), 'foreground')};
+}
 
+@mixin buildMatSlideToggleTheme($theme)
+{
     .mat-mdc-slide-toggle.mat-accent
     {
         --mdc-switch-selected-track-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'track'), 'normal')};
@@ -140,4 +179,20 @@
 
     --slideToggle-foreground: #{map.get(map.get($theme, 'slideToggle'), 'foreground')};
     --slideToggle-onPrimary-foreground: #{map.get(map.get(map.get($theme, 'slideToggle'), 'onPrimary'), 'foreground')};
+}
+
+@mixin buildThemeColors($theme)
+{
+    @include buildFontFamily($theme);
+    @include buildBlockTheme($theme);
+    @include buildTitleTheme($theme);
+    @include buildMainMenuTheme($theme);
+    @include buildDialogTheme($theme);
+    @include buildFormsTheme($theme);
+    @include buildGridTheme($theme);
+    @include buildMiscTheme($theme);
+    @include buildAlertTheme($theme);
+    @include buildTextTheme($theme);
+    @include buildButtonTheme($theme);
+    @include buildMatSlideToggleTheme($theme);
 }

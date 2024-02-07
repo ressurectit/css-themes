@@ -76,7 +76,7 @@ $_defaultTheme:
     (
         background: $orangeRed,
         backgroundGradient: color.scale($gray-0, $lightness: -6%, $saturation: 10%),
-        backgroundGradientDark: color.scale($gray-0, $lightness: -12%, $saturation: 2%),
+        backgroundGradient2: color.scale($gray-0, $lightness: -12%, $saturation: 2%),
         foreground: $gray-6,
         active:
         (
