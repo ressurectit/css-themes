@@ -75,6 +75,7 @@
             &>div
             {
                 padding: 0 var(--size-3px);
+                white-space: nowrap;
 
                 &>span.fa
                 {
