@@ -216,14 +216,8 @@
 
         ng-select.form-control
         {
-            .normal-state button.btn-select
-            {
-                @extend %control-error;
-
-                display: flex;
-            }
-
-            .edit-normal-state div.btn-select
+            .normal-state button.form-control-select,
+            .edit-normal-state div.form-control-select
             {
                 @extend %control-error;
 
