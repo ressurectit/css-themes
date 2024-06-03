@@ -157,6 +157,8 @@
 
     @include generate-margin-padding(padding, vars.$sizes);
     @include generate-margin-padding(margin, vars.$sizes);
+    @include generate-column-row-gaps(column, vars.$sizes);
+    @include generate-column-row-gaps(row, vars.$sizes);
 }
 
 @mixin generate-margin-padding($type, $sizes)
@@ -198,6 +200,17 @@
         {
             #{$type}-top: var(--size-#{$size});
             #{$type}-bottom: var(--size-#{$size});
+        }
+    }
+}
+
+@mixin generate-column-row-gaps($type, $sizes)
+{
+    @each $sizeType, $size in $sizes
+    {
+        .#{$type}-gap-#{$sizeType}
+        {
+            #{$type}-gap: var(--size-#{$size});
         }
     }
 }

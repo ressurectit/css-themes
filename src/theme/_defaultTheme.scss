@@ -138,6 +138,19 @@ $_defaultTheme:
             foreground: $_red,
             outline: $_red,
         ),
+        errors:
+        (
+            background: inherit,
+            foreground: $_red,
+            fontSize: 0.7em,
+            padding: 0,
+            border:
+            (
+                color: transparent,
+                width: 0,
+                style: solid,
+            ),
+        ),
     ),
     formGroup:
     (

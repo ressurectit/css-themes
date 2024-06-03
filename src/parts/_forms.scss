@@ -228,11 +228,15 @@
 
     .validation-error-div
     {
-        font-size: 0.7em;
-
         &>div
         {
-            color: var(--label-invalid-background);
+            font-size: var(--input-errors-fontSize);
+            padding: var(--input-errors-padding);
+            background-color: var(--input-errors-background);
+            color: var(--input-errors-foreground);
+            border-color: var(--input-errors-border-color);
+            border-width: var(--input-errors-border-width);
+            border-style: var(--input-errors-border-style);
         }
     }
 
