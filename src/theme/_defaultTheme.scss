@@ -152,10 +152,6 @@ $_defaultTheme:
             ),
         ),
     ),
-    formGroup:
-    (
-        margin: 0 mixins.getSize($_defaultFontSize, 10) mixins.getSize($_defaultFontSize, 10) 0,
-    ),
     label:
     (
         margin: 0 0 mixins.getSize($_defaultFontSize, 2),

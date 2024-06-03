@@ -74,7 +74,6 @@
     --input-errors-border-color: #{map.get(map.get(map.get(map.get($theme, 'input'), 'errors'), 'border'), 'color')};
     --input-errors-border-width: #{map.get(map.get(map.get(map.get($theme, 'input'), 'errors'), 'border'), 'width')};
     --input-errors-border-style: #{map.get(map.get(map.get(map.get($theme, 'input'), 'errors'), 'border'), 'style')};
-    --formGroup-margin: #{map.get(map.get($theme, 'formGroup'), 'margin')};
     --label-invalid-background: #{map.get(map.get(map.get($theme, 'label'), 'invalid'), 'background')};
     --label-invalid-foreground: #{map.get(map.get(map.get($theme, 'label'), 'invalid'), 'foreground')};
     --label-font-size: #{map.get(map.get(map.get($theme, 'label'), 'font'), 'size')};
