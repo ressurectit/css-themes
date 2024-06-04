@@ -1,11 +1,19 @@
 @mixin css-buttons
 {
-    //############## BUTTONS ##############
+    //############## BUTTONS SPACING ##############
 
     .buttons-margin
     {
         margin-right: var(--button-spaceBetween);
     }
+
+    .buttons-gap
+    {
+        column-gap: var(--buttons-columnGap);
+        row-gap: var(--buttons-rowGap);
+    }
+
+    //############## BUTTONS ##############
 
     %btn-base
     {

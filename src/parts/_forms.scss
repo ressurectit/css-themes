@@ -46,6 +46,8 @@
 
     .form-group
     {
+        display: flex;
+        flex-direction: column;
     }
 
     .form-control:not(ng-select)
@@ -244,5 +246,13 @@
     reserved-space-validation-errors-container>div
     {
         min-height: .9em;
+    }
+
+    //############## FORM SPACING ##############
+
+    .inputs-gap
+    {
+        column-gap: var(--inputs-columnGap);
+        row-gap: var(--inputs-rowGap);
     }
 }

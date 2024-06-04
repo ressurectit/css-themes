@@ -52,6 +52,8 @@
 
 @mixin buildFormsTheme($theme)
 {
+    --inputs-columnGap: #{map.get(map.get($theme, 'inputs'), 'columnGap')};
+    --inputs-rowGap: #{map.get(map.get($theme, 'inputs'), 'rowGap')};
     --input-background: #{map.get(map.get($theme, 'input'), 'background')};
     --input-foreground: #{map.get(map.get($theme, 'input'), 'foreground')};
     --input-border: #{map.get(map.get($theme, 'input'), 'border')};
@@ -143,6 +145,8 @@
 
 @mixin buildButtonTheme($theme)
 {
+    --buttons-columnGap: #{map.get(map.get($theme, 'buttons'), 'columnGap')};
+    --buttons-rowGap: #{map.get(map.get($theme, 'buttons'), 'rowGap')};
     --button-spaceBetween: #{map.get(map.get($theme, 'button'), 'spaceBetween')};
     --button-padding: #{map.get(map.get($theme, 'button'), 'padding')};
     --button-textTransformation: #{map.get(map.get($theme, 'button'), 'textTransformation')};

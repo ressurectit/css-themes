@@ -109,6 +109,11 @@ $_defaultTheme:
             ),
         ),
     ),
+    inputs:
+    (
+        columnGap: mixins.getSize($_defaultFontSize, 10),
+        rowGap: mixins.getSize($_defaultFontSize, 10),
+    ),
     input:
     (
         background: $_white,
@@ -272,6 +277,11 @@ $_defaultTheme:
             background: inherit,
             foreground: $_lightBlue,
         ),
+    ),
+    buttons:
+    (
+        columnGap: mixins.getSize($_defaultFontSize, 10),
+        rowGap: mixins.getSize($_defaultFontSize, 10),
     ),
     button:
     (
