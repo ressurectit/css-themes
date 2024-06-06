@@ -287,46 +287,163 @@ $_defaultTheme:
     (
         spaceBetween: mixins.getSize($_defaultFontSize, 10),
         padding: mixins.getSize($_defaultFontSize, 4) mixins.getSize($_defaultFontSize, 10),
+        letterSpacing: var(--size-1px),
+        textShadow: 0 0,
+        boxShadow: 0 0,
+        transition: all 350ms,
+        border: none,
+        borderRadius: var(--border-radius),
+        fontSize: 1em,
+        fontWeight: normal,
+        minWidth: auto,
         textTransformation: uppercase,
+        hover:
+        (
+            filter: brightness(92%)
+        ),
+        focus:
+        (
+            filter: brightness(92%)
+        ),
+        active:
+        (
+            filter: brightness(85%)
+        ),
         primary:
         (
             background: $_green,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         secondary:
         (
             background: $_gray-5,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         info:
         (
             background: $_lightBlue,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         default:
         (
             background: $_gray-5,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         success:
         (
             background: $_green,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         warning:
         (
             background: $_orange,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         danger:
         (
             background: $_red,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         error:
         (
             background: $_red,
             foreground: $_white,
+            hover:
+            (
+                filter: var(--button-hover-filter)
+            ),
+            focus:
+            (
+                filter: var(--button-focus-filter)
+            ),
+            active:
+            (
+                filter: var(--button-active-filter)
+            ),
         ),
         icon:
         (

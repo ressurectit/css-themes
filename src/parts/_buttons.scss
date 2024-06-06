@@ -17,19 +17,21 @@
 
     %btn-base
     {
-        letter-spacing: var(--size-1px);
+        letter-spacing: var(--button-letterSpacing);
         background-image: none;
-        text-shadow: 0 0;
-        box-shadow: 0 0;
+        text-shadow: var(--button-textShadow);
+        box-shadow: var(--button-boxShadow);
         text-transform: var(--button-textTransformation);
-        transition: all 350ms;
-        border: none;
-        border-radius: var(--border-radius);
+        transition: var(--button-transition);
+        border: var(--button-border);
+        border-radius: var(--button-borderRadius);
         padding: var(--button-padding);
         font-family: var(--font-family);
         cursor: pointer;
         white-space: nowrap;
-        font-size: 1em;
+        font-size: var(--button-fontSize);
+        font-weight: var(--button-fontWeight);
+        min-width: var(--button-minWidth);
         position: relative;
     }
 
@@ -111,19 +113,32 @@
             {
                 content: "";
                 position: absolute;
-                transition: all 350ms;
+                transition: var(--button-transition);
                 top: 0; left: 0;
                 width: 100%; height: 100%;
                 background-color: var(--button-#{$buttonName}-background);
-                border-radius: var(--border-radius);
+                background-image: var(--button-#{$buttonName}-backgroundImage);
+                border-radius: var(--button-borderRadius);
             }
 
-            &:hover:not(:is(.disabled, :disabled)),
+            &:hover:not(:is(.disabled, :disabled))
+            {
+                &::before 
+                {
+                    filter: var(--button-#{$buttonName}-hover-filter);
+                    background-image: var(--button-#{$buttonName}-hover-backgroundImage);
+                }
+            }
+
             &:focus:not(:is(.disabled, :disabled))
             {
                 &::before 
                 {
-                    filter: brightness(92%);
+                    &::before 
+                    {
+                        filter: var(--button-#{$buttonName}-focus-filter);
+                        background-image: var(--button-#{$buttonName}-focus-backgroundImage);
+                    }
                 }
             }
 
@@ -131,7 +146,8 @@
             {
                 &::before 
                 {
-                    filter: brightness(85%);
+                    filter: var(--button-#{$buttonName}-active-filter);
+                    background-image: var(--button-#{$buttonName}-active-backgroundImage);
                 }
 
                 &>span[class^="fa"],
@@ -153,7 +169,7 @@
             &>span[class^="fas"],
             &>span[class^="glyphicon"]
             {
-                transition: all 350ms;
+                transition: var(--button-transition);
                 color: var(--button-#{$buttonName}-background);
                 filter: brightness(80%);
             }

@@ -145,27 +145,47 @@
 
 @mixin buildButtonTheme($theme)
 {
+    $buttonTypes: 'primary', 'secondary', 'info', 'default', 'success', 'warning', 'danger', 'error';
+    $buttonActionTypes: 'hover', 'focus', 'active';
+
     --buttons-columnGap: #{map.get(map.get($theme, 'buttons'), 'columnGap')};
     --buttons-rowGap: #{map.get(map.get($theme, 'buttons'), 'rowGap')};
     --button-spaceBetween: #{map.get(map.get($theme, 'button'), 'spaceBetween')};
+    --button-letterSpacing: #{map.get(map.get($theme, 'button'), 'letterSpacing')};
+    --button-textShadow: #{map.get(map.get($theme, 'button'), 'textShadow')};
+    --button-boxShadow: #{map.get(map.get($theme, 'button'), 'boxShadow')};
+    --button-transition: #{map.get(map.get($theme, 'button'), 'transition')};
+    --button-border: #{map.get(map.get($theme, 'button'), 'border')};
+    --button-borderRadius: #{map.get(map.get($theme, 'button'), 'borderRadius')};
+    --button-fontSize: #{map.get(map.get($theme, 'button'), 'fontSize')};
+    --button-fontWeight: #{map.get(map.get($theme, 'button'), 'fontWeight')};
+    --button-minWidth: #{map.get(map.get($theme, 'button'), 'minWidth')};
     --button-padding: #{map.get(map.get($theme, 'button'), 'padding')};
     --button-textTransformation: #{map.get(map.get($theme, 'button'), 'textTransformation')};
-    --button-info-background: #{map.get(map.get(map.get($theme, 'button'), 'info'), 'background')};
-    --button-info-foreground: #{map.get(map.get(map.get($theme, 'button'), 'info'), 'foreground')};
-    --button-warning-background: #{map.get(map.get(map.get($theme, 'button'), 'warning'), 'background')};
-    --button-warning-foreground: #{map.get(map.get(map.get($theme, 'button'), 'warning'), 'foreground')};
-    --button-success-background: #{map.get(map.get(map.get($theme, 'button'), 'success'), 'background')};
-    --button-success-foreground: #{map.get(map.get(map.get($theme, 'button'), 'success'), 'foreground')};
-    --button-danger-background: #{map.get(map.get(map.get($theme, 'button'), 'danger'), 'background')};
-    --button-danger-foreground: #{map.get(map.get(map.get($theme, 'button'), 'danger'), 'foreground')};
-    --button-primary-background: #{map.get(map.get(map.get($theme, 'button'), 'primary'), 'background')};
-    --button-primary-foreground: #{map.get(map.get(map.get($theme, 'button'), 'primary'), 'foreground')};
-    --button-secondary-background: #{map.get(map.get(map.get($theme, 'button'), 'secondary'), 'background')};
-    --button-secondary-foreground: #{map.get(map.get(map.get($theme, 'button'), 'secondary'), 'foreground')};
-    --button-default-background: #{map.get(map.get(map.get($theme, 'button'), 'default'), 'background')};
-    --button-default-foreground: #{map.get(map.get(map.get($theme, 'button'), 'default'), 'foreground')};
-    --button-error-background: #{map.get(map.get(map.get($theme, 'button'), 'error'), 'background')};
-    --button-error-foreground: #{map.get(map.get(map.get($theme, 'button'), 'error'), 'foreground')};
+
+    @each $buttonActionType in $buttonActionTypes
+    {
+        --button-#{$buttonActionType}-filter: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'filter')};
+        --button-#{$buttonActionType}-backgroundImage: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'backgroundImage')};
+        --button-#{$buttonActionType}-background: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'background')};
+        --button-#{$buttonActionType}-foreground: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'foreground')};
+    }
+
+    @each $buttonType in $buttonTypes
+    {
+        --button-#{$buttonType}-background: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'background')};
+        --button-#{$buttonType}-backgroundImage: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'backgroundImage')};
+        --button-#{$buttonType}-foreground: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'foreground')};
+
+        @each $buttonActionType in $buttonActionTypes
+        {
+            --button-#{$buttonType}-#{$buttonActionType}-filter: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'filter')};
+            --button-#{$buttonType}-#{$buttonActionType}-background: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'background')};
+            --button-#{$buttonType}-#{$buttonActionType}-backgroundImage: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'backgroundImage')};
+            --button-#{$buttonType}-#{$buttonActionType}-foreground: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'foreground')};
+        }
+    }
+
     --button-icon-background: #{map.get(map.get(map.get($theme, 'button'), 'icon'), 'background')};
     --button-icon-foreground: #{map.get(map.get(map.get($theme, 'button'), 'icon'), 'foreground')};
     --button-icon-hover-background: #{map.get(map.get(map.get(map.get($theme, 'button'), 'icon'), 'hover'), 'background')};
