@@ -25,6 +25,14 @@
 {
     --pageTitle-background: #{map.get(map.get($theme, 'pageTitle'), 'background')};
     --pageTitle-foreground: #{map.get(map.get($theme, 'pageTitle'), 'foreground')};
+    --pageTitle-padding: #{map.get(map.get($theme, 'pageTitle'), 'padding')};
+    --pageTitle-margin: #{map.get(map.get($theme, 'pageTitle'), 'margin')};
+    --pageTitle-fontSize: #{map.get(map.get($theme, 'pageTitle'), 'fontSize')};
+    --pageTitle-border: #{map.get(map.get($theme, 'pageTitle'), 'border')};
+    --pageTitle-borderTop: #{map.get(map.get($theme, 'pageTitle'), 'borderTop')};
+    --pageTitle-borderRight: #{map.get(map.get($theme, 'pageTitle'), 'borderRight')};
+    --pageTitle-borderBottom: #{map.get(map.get($theme, 'pageTitle'), 'borderBottom')};
+    --pageTitle-borderLeft: #{map.get(map.get($theme, 'pageTitle'), 'borderLeft')};
 }
 
 @mixin buildMainMenuTheme($theme)
