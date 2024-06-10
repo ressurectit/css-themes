@@ -300,6 +300,7 @@ $_defaultTheme:
         fontWeight: normal,
         minWidth: auto,
         textTransformation: uppercase,
+        contentGap: var(--size-xs),
         hover:
         (
             filter: brightness(92%)

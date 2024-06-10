@@ -33,6 +33,9 @@
         font-weight: var(--button-fontWeight);
         min-width: var(--button-minWidth);
         position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: var(--button-contentGap);
     }
 
     .btn
@@ -49,14 +52,6 @@
         &>span
         {
             position: relative;
-        }
-
-        span[class^="fa"],
-        span[class^="fas"],
-        span[class^="fab"],
-        span[class^="glyphicon"]
-        {
-            margin-right: var(--size-xs);
         }
     }
 
@@ -128,6 +123,15 @@
                     filter: var(--button-#{$buttonName}-hover-filter);
                     background-image: var(--button-#{$buttonName}-hover-backgroundImage);
                 }
+
+                &>span[class^="fa"],
+                &>span[class^="fas"],
+                &>span[class^="fab"],
+                &>span[class^="far"],
+                &>span[class^="glyphicon"]
+                {
+                    color: var(--button-#{$buttonName}-hover-iconForeground);
+                }
             }
 
             &:focus:not(:is(.disabled, :disabled))
@@ -139,6 +143,15 @@
                         filter: var(--button-#{$buttonName}-focus-filter);
                         background-image: var(--button-#{$buttonName}-focus-backgroundImage);
                     }
+                }
+
+                &>span[class^="fa"],
+                &>span[class^="fas"],
+                &>span[class^="fab"],
+                &>span[class^="far"],
+                &>span[class^="glyphicon"]
+                {
+                    color: var(--button-#{$buttonName}-focus-iconForeground);
                 }
             }
 
@@ -152,9 +165,11 @@
 
                 &>span[class^="fa"],
                 &>span[class^="fas"],
+                &>span[class^="fab"],
+                &>span[class^="far"],
                 &>span[class^="glyphicon"]
                 {
-                    filter: brightness(70%);
+                    color: var(--button-#{$buttonName}-active-iconForeground);
                 }
             }
 
@@ -167,11 +182,12 @@
 
             &>span[class^="fa"],
             &>span[class^="fas"],
+            &>span[class^="fab"],
+            &>span[class^="far"],
             &>span[class^="glyphicon"]
             {
                 transition: var(--button-transition);
-                color: var(--button-#{$buttonName}-background);
-                filter: brightness(80%);
+                color: var(--button-#{$buttonName}-iconForeground);
             }
         }
     }

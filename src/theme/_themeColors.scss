@@ -170,6 +170,7 @@
     --button-minWidth: #{map.get(map.get($theme, 'button'), 'minWidth')};
     --button-padding: #{map.get(map.get($theme, 'button'), 'padding')};
     --button-textTransformation: #{map.get(map.get($theme, 'button'), 'textTransformation')};
+    --button-contentGap: #{map.get(map.get($theme, 'button'), 'contentGap')};
 
     @each $buttonActionType in $buttonActionTypes
     {
@@ -184,6 +185,7 @@
         --button-#{$buttonType}-background: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'background')};
         --button-#{$buttonType}-backgroundImage: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'backgroundImage')};
         --button-#{$buttonType}-foreground: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'foreground')};
+        --button-#{$buttonType}-iconForeground: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'iconForeground')};
 
         @each $buttonActionType in $buttonActionTypes
         {
@@ -191,6 +193,7 @@
             --button-#{$buttonType}-#{$buttonActionType}-background: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'background')};
             --button-#{$buttonType}-#{$buttonActionType}-backgroundImage: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'backgroundImage')};
             --button-#{$buttonType}-#{$buttonActionType}-foreground: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'foreground')};
+            --button-#{$buttonType}-#{$buttonActionType}-iconForeground: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'iconForeground')};
         }
     }
 
