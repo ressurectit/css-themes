@@ -301,152 +301,282 @@ $_defaultTheme:
         minWidth: auto,
         textTransformation: uppercase,
         contentGap: var(--size-xs),
+        iconFilter: brightness(80%),
         hover:
         (
-            filter: brightness(92%)
+            filter: brightness(92%),
+            backgroundImage: unset,
+            background: unset,
+            foreground: unset,
         ),
         focus:
         (
-            filter: brightness(92%)
+            filter: brightness(92%),
+            backgroundImage: unset,
+            background: unset,
+            foreground: unset,
         ),
         active:
         (
-            filter: brightness(85%)
+            filter: brightness(85%),
+            backgroundImage: unset,
+            background: unset,
+            foreground: unset,
         ),
         primary:
         (
             background: $_green,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-primary-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-primary-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-primary-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-primary-iconForeground),
             ),
         ),
         secondary:
         (
             background: $_gray-5,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-secondary-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-secondary-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-secondary-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-secondary-iconForeground),
             ),
         ),
         info:
         (
             background: $_lightBlue,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-info-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-info-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-info-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-info-iconForeground),
             ),
         ),
         default:
         (
             background: $_gray-5,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-default-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-default-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-default-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-default-iconForeground),
             ),
         ),
         success:
         (
             background: $_green,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-success-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-success-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-success-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-success-iconForeground),
             ),
         ),
         warning:
         (
             background: $_orange,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-warning-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-warning-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-warning-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-warning-iconForeground),
             ),
         ),
         danger:
         (
             background: $_red,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-danger-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-danger-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-danger-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-danger-iconForeground),
             ),
         ),
         error:
         (
             background: $_red,
             foreground: $_white,
+            backgroundImage: unset,
+            iconForeground: var(--button-error-background),
+            iconFilter: var(--button-iconFilter),
             hover:
             (
-                filter: var(--button-hover-filter)
+                filter: var(--button-hover-filter),
+                backgroundImage: var(--button-hover-backgroundImage),
+                background: var(--button-hover-background),
+                foreground: var(--button-hover-foreground),
+                iconForeground: var(--button-error-iconForeground),
             ),
             focus:
             (
-                filter: var(--button-focus-filter)
+                filter: var(--button-focus-filter),
+                backgroundImage: var(--button-focus-backgroundImage),
+                background: var(--button-focus-background),
+                foreground: var(--button-focus-foreground),
+                iconForeground: var(--button-error-iconForeground),
             ),
             active:
             (
-                filter: var(--button-active-filter)
+                filter: var(--button-active-filter),
+                backgroundImage: var(--button-active-backgroundImage),
+                background: var(--button-active-background),
+                foreground: var(--button-active-foreground),
+                iconForeground: var(--button-error-iconForeground),
             ),
         ),
         icon:
