@@ -122,7 +122,9 @@
                 &::before 
                 {
                     filter: var(--button-#{$buttonName}-hover-filter);
+                    background-color: var(--button-#{$buttonName}-hover-background);
                     background-image: var(--button-#{$buttonName}-hover-backgroundImage);
+                    color: var(--button-#{$buttonName}-hover-foreground);
                 }
 
                 &>span[class^="fa"],
@@ -132,10 +134,6 @@
                 &>span[class^="glyphicon"]
                 {
                     color: var(--button-#{$buttonName}-hover-iconForeground);
-                    filter: var(--button-#{$buttonName}-hover-filter);
-                    background-color: var(--button-#{$buttonName}-hover-background);
-                    background-image: var(--button-#{$buttonName}-hover-backgroundImage);
-                    color: var(--button-#{$buttonName}-hover-foreground);
                 }
             }
 
@@ -146,7 +144,9 @@
                     &::before 
                     {
                         filter: var(--button-#{$buttonName}-focus-filter);
+                        background-color: var(--button-#{$buttonName}-focus-background);
                         background-image: var(--button-#{$buttonName}-focus-backgroundImage);
+                        color: var(--button-#{$buttonName}-focus-foreground);
                     }
                 }
 
@@ -157,10 +157,6 @@
                 &>span[class^="glyphicon"]
                 {
                     color: var(--button-#{$buttonName}-focus-iconForeground);
-                    filter: var(--button-#{$buttonName}-focus-filter);
-                    background-color: var(--button-#{$buttonName}-focus-background);
-                    background-image: var(--button-#{$buttonName}-focus-backgroundImage);
-                    color: var(--button-#{$buttonName}-focus-foreground);
                 }
             }
 
@@ -169,7 +165,9 @@
                 &::before 
                 {
                     filter: var(--button-#{$buttonName}-active-filter);
+                    background-color: var(--button-#{$buttonName}-active-background);
                     background-image: var(--button-#{$buttonName}-active-backgroundImage);
+                    color: var(--button-#{$buttonName}-active-foreground);
                 }
 
                 &>span[class^="fa"],
@@ -179,10 +177,6 @@
                 &>span[class^="glyphicon"]
                 {
                     color: var(--button-#{$buttonName}-active-iconForeground);
-                    filter: var(--button-#{$buttonName}-active-filter);
-                    background-color: var(--button-#{$buttonName}-active-background);
-                    background-image: var(--button-#{$buttonName}-active-backgroundImage);
-                    color: var(--button-#{$buttonName}-active-foreground);
                 }
             }
 
