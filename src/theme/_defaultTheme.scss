@@ -333,25 +333,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-primary-backgroundImage),
+                background: var(--button-primary-background),
+                foreground: var(--button-primary-foreground),
                 iconForeground: var(--button-primary-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-primary-backgroundImage),
+                background: var(--button-primary-background),
+                foreground: var(--button-primary-foreground),
                 iconForeground: var(--button-primary-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-primary-backgroundImage),
+                background: var(--button-primary-background),
+                foreground: var(--button-primary-foreground),
                 iconForeground: var(--button-primary-iconForeground),
             ),
         ),
@@ -365,25 +365,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-secondary-backgroundImage),
+                background: var(--button-secondary-background),
+                foreground: var(--button-secondary-foreground),
                 iconForeground: var(--button-secondary-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-secondary-backgroundImage),
+                background: var(--button-secondary-background),
+                foreground: var(--button-secondary-foreground),
                 iconForeground: var(--button-secondary-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-secondary-backgroundImage),
+                background: var(--button-secondary-background),
+                foreground: var(--button-secondary-foreground),
                 iconForeground: var(--button-secondary-iconForeground),
             ),
         ),
@@ -397,25 +397,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-info-backgroundImage),
+                background: var(--button-info-background),
+                foreground: var(--button-info-foreground),
                 iconForeground: var(--button-info-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-info-backgroundImage),
+                background: var(--button-info-background),
+                foreground: var(--button-info-foreground),
                 iconForeground: var(--button-info-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-info-backgroundImage),
+                background: var(--button-info-background),
+                foreground: var(--button-info-foreground),
                 iconForeground: var(--button-info-iconForeground),
             ),
         ),
@@ -429,25 +429,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-default-backgroundImage),
+                background: var(--button-default-background),
+                foreground: var(--button-default-foreground),
                 iconForeground: var(--button-default-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-default-backgroundImage),
+                background: var(--button-default-background),
+                foreground: var(--button-default-foreground),
                 iconForeground: var(--button-default-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-default-backgroundImage),
+                background: var(--button-default-background),
+                foreground: var(--button-default-foreground),
                 iconForeground: var(--button-default-iconForeground),
             ),
         ),
@@ -461,25 +461,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-success-backgroundImage),
+                background: var(--button-success-background),
+                foreground: var(--button-success-foreground),
                 iconForeground: var(--button-success-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-success-backgroundImage),
+                background: var(--button-success-background),
+                foreground: var(--button-success-foreground),
                 iconForeground: var(--button-success-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-success-backgroundImage),
+                background: var(--button-success-background),
+                foreground: var(--button-success-foreground),
                 iconForeground: var(--button-success-iconForeground),
             ),
         ),
@@ -493,25 +493,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-warning-backgroundImage),
+                background: var(--button-warning-background),
+                foreground: var(--button-warning-foreground),
                 iconForeground: var(--button-warning-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-warning-backgroundImage),
+                background: var(--button-warning-background),
+                foreground: var(--button-warning-foreground),
                 iconForeground: var(--button-warning-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-warning-backgroundImage),
+                background: var(--button-warning-background),
+                foreground: var(--button-warning-foreground),
                 iconForeground: var(--button-warning-iconForeground),
             ),
         ),
@@ -525,25 +525,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-danger-backgroundImage),
+                background: var(--button-danger-background),
+                foreground: var(--button-danger-foreground),
                 iconForeground: var(--button-danger-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-danger-backgroundImage),
+                background: var(--button-danger-background),
+                foreground: var(--button-danger-foreground),
                 iconForeground: var(--button-danger-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-danger-backgroundImage),
+                background: var(--button-danger-background),
+                foreground: var(--button-danger-foreground),
                 iconForeground: var(--button-danger-iconForeground),
             ),
         ),
@@ -557,25 +557,25 @@ $_defaultTheme:
             hover:
             (
                 filter: var(--button-hover-filter),
-                backgroundImage: var(--button-hover-backgroundImage),
-                background: var(--button-hover-background),
-                foreground: var(--button-hover-foreground),
+                backgroundImage: var(--button-error-backgroundImage),
+                background: var(--button-error-background),
+                foreground: var(--button-error-foreground),
                 iconForeground: var(--button-error-iconForeground),
             ),
             focus:
             (
                 filter: var(--button-focus-filter),
-                backgroundImage: var(--button-focus-backgroundImage),
-                background: var(--button-focus-background),
-                foreground: var(--button-focus-foreground),
+                backgroundImage: var(--button-error-backgroundImage),
+                background: var(--button-error-background),
+                foreground: var(--button-error-foreground),
                 iconForeground: var(--button-error-iconForeground),
             ),
             active:
             (
                 filter: var(--button-active-filter),
-                backgroundImage: var(--button-active-backgroundImage),
-                background: var(--button-active-background),
-                foreground: var(--button-active-foreground),
+                backgroundImage: var(--button-error-backgroundImage),
+                background: var(--button-error-background),
+                foreground: var(--button-error-foreground),
                 iconForeground: var(--button-error-iconForeground),
             ),
         ),
