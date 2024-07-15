@@ -8,6 +8,7 @@
         font-size: var(--label-font-size);
         font-weight: var(--label-font-weight);
         margin: var(--label-margin);
+        color: var(--label-foreground);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -17,11 +18,11 @@
 
     %form-control
     {
-        border-radius: var(--border-radius);
-        border-style: solid;
-        border-width: 1px;
-        box-shadow: none;
-        font-size: 1em;
+        border-radius: var(--input-borderRadius);
+        border-style: var(--input-borderStyle);
+        border-width: var(--input-borderWidth);
+        box-shadow: var(--input-boxShadow);
+        font-size: var(--input-fontSize);
         padding: var(--input-padding);
         width: 100%;
         font-family: var(--font-family);
@@ -42,12 +43,19 @@
             color: var(--input-disabled-foreground);
             border-color: var(--input-disabled-border);
         }
+
+        &:focus
+        {
+            background-color: var(--input-focus-background);
+            color: var(--input-focus-foreground);
+            border-color: var(--input-focus-border);
+        }
     }
 
     .form-group
     {
         display: flex;
-        flex-direction: column;
+        flex-direction: var(--formGroup-direction);
     }
 
     .form-control:not(ng-select)
@@ -132,33 +140,43 @@
     {
         display: flex;
         flex-direction: row;
+        width: 100%;
 
         .input-group-addon
         {
             color: var(--input-groupAddon-foreground);
             background-color: var(--input-groupAddon-background);
             border-color: var(--input-border);
-            align-self: center;
             padding: var(--input-groupAddon-padding);
-            border-top-style: solid;
-            border-bottom-style: solid;
+            border-top-style: var(--input-borderStyle);
+            border-bottom-style: var(--input-borderStyle);
             border-top-width: var(--size-1px);
             border-bottom-width: var(--size-1px);
+            display: flex;
+            align-items: center;
 
             &:first-child
             {
                 border-left-width: var(--size-1px);
-                border-left-style: solid;
-                border-top-left-radius: var(--size-4px);
-                border-bottom-left-radius: var(--size-4px);
+                border-left-style: var(--input-borderStyle);
+                border-top-left-radius: var(--input-borderRadius);
+                border-bottom-left-radius: var(--input-borderRadius);
             }
 
             &:last-child
             {
                 border-right-width: var(--size-1px);
-                border-right-style: solid;
-                border-top-right-radius: var(--size-4px);
-                border-bottom-right-radius: var(--size-4px);
+                border-right-style: var(--input-borderStyle);
+                border-top-right-radius: var(--input-borderRadius);
+                border-bottom-right-radius: var(--input-borderRadius);
+            }
+        }
+
+        &:focus-within
+        {
+            .input-group-addon
+            {
+                border-color: var(--input-focus-border);
             }
         }
 
@@ -171,14 +189,14 @@
 
             &:first-child
             {
-                border-top-left-radius: var(--size-4px);
-                border-bottom-left-radius: var(--size-4px);
+                border-top-left-radius: var(--input-borderRadius);
+                border-bottom-left-radius: var(--input-borderRadius);
             }
 
             &:last-child
             {
-                border-top-right-radius: var(--size-4px);
-                border-bottom-right-radius: var(--size-4px);
+                border-top-right-radius: var(--input-borderRadius);
+                border-bottom-right-radius: var(--input-borderRadius);
             }
         }
     }
@@ -191,7 +209,7 @@
         {
             outline-color: transparent;
             outline-style: solid;
-            outline-width: var(--size-2px);
+            outline-width: var(--input-invalid-outlineWidth);
             border-color: var(--input-invalid-border);
 
             &:active,
@@ -220,6 +238,20 @@
 
                 display: flex;
             }
+        }
+
+        &:focus-within
+        {
+            .input-group-addon
+            {
+                outline-color: var(--input-error-outline);
+                border-color: var(--input-invalid-border);
+            }
+        }
+
+        .input-group-addon
+        {
+            @extend %control-error;
         }
     }
 

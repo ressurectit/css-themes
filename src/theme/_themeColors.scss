@@ -60,11 +60,16 @@
 
 @mixin buildFormsTheme($theme)
 {
+    --formGroup-direction: #{map.get(map.get($theme, 'formGroup'), 'direction')};
     --inputs-columnGap: #{map.get(map.get($theme, 'inputs'), 'columnGap')};
     --inputs-rowGap: #{map.get(map.get($theme, 'inputs'), 'rowGap')};
     --input-background: #{map.get(map.get($theme, 'input'), 'background')};
     --input-foreground: #{map.get(map.get($theme, 'input'), 'foreground')};
     --input-border: #{map.get(map.get($theme, 'input'), 'border')};
+    --input-borderRadius: #{map.get(map.get($theme, 'input'), 'borderRadius')};
+    --input-borderStyle: #{map.get(map.get($theme, 'input'), 'borderStyle')};
+    --input-borderWidth: #{map.get(map.get($theme, 'input'), 'borderWidth')};
+    --input-boxShadow: #{map.get(map.get($theme, 'input'), 'boxShadow')};
     --input-padding: #{map.get(map.get($theme, 'input'), 'padding')};
     --input-placeholder: #{map.get(map.get($theme, 'input'), 'placeholder')};
     --input-groupAddon-background: #{map.get(map.get(map.get($theme, 'input'), 'groupAddon'), 'background')};
@@ -73,7 +78,11 @@
     --input-disabled-background: #{map.get(map.get(map.get($theme, 'input'), 'disabled'), 'background')};
     --input-disabled-foreground: #{map.get(map.get(map.get($theme, 'input'), 'disabled'), 'foreground')};
     --input-disabled-border: #{map.get(map.get(map.get($theme, 'input'), 'disabled'), 'border')};
+    --input-focus-background: #{map.get(map.get(map.get($theme, 'input'), 'focus'), 'background')};
+    --input-focus-foreground: #{map.get(map.get(map.get($theme, 'input'), 'focus'), 'foreground')};
+    --input-focus-border: #{map.get(map.get(map.get($theme, 'input'), 'focus'), 'border')};
     --input-invalid-border: #{map.get(map.get(map.get($theme, 'input'), 'invalid'), 'border')};
+    --input-invalid-outlineWidth: #{map.get(map.get(map.get($theme, 'input'), 'invalid'), 'outlineWidth')};
     --input-error-background: #{map.get(map.get(map.get($theme, 'input'), 'error'), 'background')};
     --input-error-foreground: #{map.get(map.get(map.get($theme, 'input'), 'error'), 'foreground')};
     --input-error-outline: #{map.get(map.get(map.get($theme, 'input'), 'error'), 'outline')};
@@ -89,6 +98,7 @@
     --label-font-size: #{map.get(map.get(map.get($theme, 'label'), 'font'), 'size')};
     --label-font-weight: #{map.get(map.get(map.get($theme, 'label'), 'font'), 'weight')};
     --label-margin: #{map.get(map.get($theme, 'label'), 'margin')};
+    --label-foreground: #{map.get(map.get($theme, 'label'), 'foreground')};
     --select-tag-background: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'background')};
     --select-tag-foreground: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'foreground')};
     --select-tag-padding: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'padding')};

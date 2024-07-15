@@ -112,6 +112,10 @@ $_defaultTheme:
             ),
         ),
     ),
+    formGroup:
+    (
+        direction: column,
+    ),
     inputs:
     (
         columnGap: mixins.getSize($_defaultFontSize, 10),
@@ -122,6 +126,10 @@ $_defaultTheme:
         background: $_white,
         foreground: $_gray-6,
         border: $_gray-3,
+        borderRadius: var(--border-radius),
+        borderStyle: solid,
+        borderWidth: 1px,
+        boxShadow: none,
         padding: mixins.getSize($_defaultFontSize, 5) mixins.getSize($_defaultFontSize, 12),
         placeholder: $_gray-4,
         groupAddon:
@@ -136,9 +144,16 @@ $_defaultTheme:
             foreground: $_gray-6,
             border: $_gray-3,
         ),
+        focus:
+        (
+            background: var(--input-background),
+            foreground: var(--input-foreground),
+            border: var(--input-border),
+        ),
         invalid:
         (
             border: $_red,
+            outlineWidth: var(--size-2px),
         ),
         error:
         (
