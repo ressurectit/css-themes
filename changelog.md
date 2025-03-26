@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 1.0.0 (2024-02-07)
+## Version 1.0.0 (2025-03-26)
 
 ### Features
 
