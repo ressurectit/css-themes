@@ -1,638 +1,609 @@
 @use 'sass:color';
-@use 'sass:map';
 
 @use '@css-styles/common' as mixins;
 
-//############## FONT ##############
+@use './defaultColors' as colors;
 
-$_defaultFontSize: 14px;
-
-//############## AVAILABLE COLORS ##############
-
-$_white: #ffffff;
-$_black: #111111;
-
-$_gray-0: #e5e5e5;
-$_gray-1: #e0e0e0;
-$_gray-2: #cccccc;
-$_gray-3: #aaaaaa;
-$_gray-4: #9d9d9d;
-$_gray-5: #737373;
-$_gray-6: #555555;
-$_gray-7: #444444;
-$_gray-8: #383838;
-$_gray-9: #1e1e1e;
-
-$_almostWhite: #f5f5f5;
-$_green: #6aba4f;
-$_lightBlue: #5bc0de;
-$_blue: #337ab7;
-$_azure: #00a3e0;
-$_red: #ec0e0e;
-$_orangeRed: #e45514;
-$_orange: #e4a256;
-$_yellowGreen: #bbdd4f;
-$_yellow: #d4da03;
-$_brown: #6b4b02;
-$_transparentBlack: #00000066;
-
-//############## DEFAULT THEME ##############
-
-$_defaultTheme:
-(
-    fontFamily: 'Inter',
-    page:
+@function defineTheme($fontSize: 14px, $theme: (), $customization: ())
+{
+    //############## DEFAULT THEME ##############
+    $defaultTheme:
     (
-        background: $_white,
-        foreground: $_black,
-        scrollbar: color.scale($_white, $lightness: 14%),
-    ),
-    primary:
-    (
-        background: $_gray-0,
-        foreground: $_black,
-        scrollbar: color.scale($_gray-0, $lightness: 14%),
-    ),
-    secondary:
-    (
-        background: $_gray-7,
-        foreground: $_white,
-        scrollbar: color.scale($_gray-7, $lightness: 14%),
-    ),
-    block:
-    (
-        background: $_white,
-        foreground: $_black,
-        scrollbar: color.scale($_white, $lightness: 14%),
-    ),
-    pageTitle:
-    (
-        background: $_gray-8,
-        foreground: $_gray-1,
-        padding: 1rem 1.5rem,
-        margin: var(--size-sm) 0 0,
-        fontSize: 1.5em,
-    ),
-    mainMenu:
-    (
-        background: $_orangeRed,
-        backgroundGradient: color.scale($_gray-0, $lightness: -6%, $saturation: 10%),
-        backgroundGradient2: color.scale($_gray-0, $lightness: -12%, $saturation: 2%),
-        foreground: $_gray-6,
-        active:
+        fontFamily: 'Inter',
+        page:
         (
-            foreground: $_white,
-            background: inherit,
+            background: colors.$white,
+            foreground: colors.$black,
+            scrollbar: color.scale(colors.$white, $lightness: 14%),
         ),
-        drawer:
+        block:
         (
-            background: $_white,
-            foreground: $_black,
-        )
-    ),
-    dialog:
-    (
-        border: $_gray-7,
-        title:
-        (
-            background: $_gray-8,
-            foreground: $_gray-0,
-        ),
-        content:
-        (
-            background: $_white,
-            foreground: $_black,
-        ),
-        closeButton:
-        (
-            hover:
+            highlight:
             (
-                background: color.scale($_gray-8, $lightness: 10%),
-                foreground: color.scale($_gray-0, $lightness: 10%),
+                background: colors.$white,
+                foreground: colors.$black,
+                scrollbar: color.scale(colors.$white, $lightness: 14%),
             ),
         ),
-    ),
-    formGroup:
-    (
-        direction: column,
-    ),
-    inputs:
-    (
-        columnGap: mixins.getSize($_defaultFontSize, 10),
-        rowGap: mixins.getSize($_defaultFontSize, 10),
-    ),
-    input:
-    (
-        background: $_white,
-        foreground: $_gray-6,
-        border: $_gray-3,
-        borderRadius: var(--border-radius),
-        borderStyle: solid,
-        borderWidth: 1px,
-        boxShadow: none,
-        padding: mixins.getSize($_defaultFontSize, 5) mixins.getSize($_defaultFontSize, 12),
-        placeholder: $_gray-4,
-        groupAddon:
+        pageTitle:
         (
-            background: color.scale($_gray-0, $lightness: 30%),
-            foreground: inherit,
-            padding: mixins.getSize($_defaultFontSize, 5) mixins.getSize($_defaultFontSize, 4),
+            background: colors.$gray-800,
+            foreground: colors.$gray-100,
+            padding: 1rem 1.5rem,
+            margin: var(--size-fixed-sm) 0 0,
+            fontSize: 1.5em,
         ),
-        disabled:
+        level:
         (
-            background: $_gray-4,
-            foreground: $_gray-6,
-            border: $_gray-3,
+            succes: colors.$green-600,
+            info: colors.$azure-500,
+            warning: colors.$orange-800,
+            error: colors.$red-600,
+            default: colors.$gray-500,
         ),
-        focus:
+        theme:
         (
-            background: var(--input-background),
-            foreground: var(--input-foreground),
-            border: var(--input-border),
+            primary: unset,
+            onPrimary: unset,
+            secondary: unset,
+            onSecondary: unset,
+            tertiary: unset,
+            onTertiary: unset,
+            success: unset,
+            onSuccess: unset,
+            info: unset,
+            onInfo: unset,
+            warning: unset,
+            onWarning: unset,
+            error: unset,
+            onError: unset,
+            primaryContainer: unset,
+            onPrimaryContainer: unset,
+            secondaryContainer: unset,
+            onSecondaryContainer: unset,
+            tertiaryContainer: unset,
+            onTertiaryContainer: unset,
         ),
-        invalid:
+        alert:
         (
-            border: $_red,
-            outlineWidth: var(--size-2px),
-        ),
-        error:
-        (
-            background: inherit,
-            foreground: $_red,
-            outline: $_red,
-        ),
-        errors:
-        (
-            background: inherit,
-            foreground: $_red,
-            fontSize: 0.7em,
-            padding: 0,
-            border:
+            info:
             (
-                color: transparent,
-                width: 0,
-                style: solid,
+                background: colors.$azure-500,
+                foreground: colors.$white,
+            ),
+            warning:
+            (
+                background: colors.$orange-800,
+                foreground: colors.$white,
+            ),
+            success:
+            (
+                background: colors.$green-600,
+                foreground: colors.$white,
+            ),
+            danger:
+            (
+                background: colors.$red-600,
+                foreground: colors.$white,
+            ),
+            error:
+            (
+                background: colors.$red-600,
+                foreground: colors.$white,
             ),
         ),
-    ),
-    label:
-    (
-        margin: 0 0 mixins.getSize($_defaultFontSize, 2),
-        font:
+        text:
         (
-            size: 1em,
-            weight: bold,
-        ),
-        invalid:
-        (
-            foreground: $_red,
-            background: inherit,
-        ),
-    ),
-    select:
-    (
-        tag:
-        (
-            background: $_azure,
-            foreground: $_black,
-            padding: mixins.getSize($_defaultFontSize * .8, 1) mixins.getSize($_defaultFontSize * .8, 3),
-            fontSize: .8em,
-        ),
-    ),
-    grid:
-    (
-        header:
-        (
-            background: $_gray-8,
-            foreground: $_white,
-        ),
-        evenRow:
-        (
-            background: $_white,
-            foreground: inherit,
-        ),
-        oddRow:
-        (
-            background: $_gray-0,
-            foreground: inherit,
-        ),
-    ),
-    separator:
-    (
-        background: inherit,
-        foreground: $_gray-6,
-    ),
-    level:
-    (
-        succes: $_green,
-        info: $_lightBlue,
-        warning: $_orange,
-        error: $_red,
-        default: $_gray-5,
-    ),
-    weight:
-    (
-        foreground: $_white,
-        weight-0: $_green,
-        weight-1: $_yellowGreen,
-        weight-2: $_yellow,
-        weight-3: $_orange,
-        weight-4: $_orangeRed,
-        weight-5: $_red,
-    ),
-    alert:
-    (
-        info:
-        (
-            background: $_lightBlue,
-            foreground: $_white,
-        ),
-        warning:
-        (
-            background: $_orange,
-            foreground: $_white,
-        ),
-        success:
-        (
-            background: $_green,
-            foreground: $_white,
-        ),
-        danger:
-        (
-            background: $_red,
-            foreground: $_white,
-        ),
-        error:
-        (
-            background: $_red,
-            foreground: $_white,
-        ),
-    ),
-    text:
-    (
-        primary:
-        (
-            background: inherit,
-            foreground: $_azure,
-        ),
-        danger:
-        (
-            background: inherit,
-            foreground: $_red,
-        ),
-        warning:
-        (
-            background: inherit,
-            foreground: $_orange,
-        ),
-        success:
-        (
-            background: inherit,
-            foreground: $_green,
-        ),
-        info:
-        (
-            background: inherit,
-            foreground: $_lightBlue,
-        ),
-    ),
-    buttons:
-    (
-        columnGap: mixins.getSize($_defaultFontSize, 10),
-        rowGap: mixins.getSize($_defaultFontSize, 10),
-    ),
-    button:
-    (
-        spaceBetween: mixins.getSize($_defaultFontSize, 10),
-        padding: mixins.getSize($_defaultFontSize, 4) mixins.getSize($_defaultFontSize, 10),
-        letterSpacing: var(--size-1px),
-        textShadow: 0 0,
-        boxShadow: 0 0,
-        transition: all 350ms,
-        border: none,
-        borderRadius: var(--border-radius),
-        fontSize: 1em,
-        fontWeight: normal,
-        minWidth: auto,
-        textTransformation: uppercase,
-        contentGap: var(--size-xs),
-        iconFilter: brightness(80%),
-        hover:
-        (
-            filter: brightness(92%),
-            backgroundImage: unset,
-            background: unset,
-            foreground: unset,
-        ),
-        focus:
-        (
-            filter: brightness(92%),
-            backgroundImage: unset,
-            background: unset,
-            foreground: unset,
-        ),
-        active:
-        (
-            filter: brightness(85%),
-            backgroundImage: unset,
-            background: unset,
-            foreground: unset,
-        ),
-        primary:
-        (
-            background: $_green,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-primary-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-primary-backgroundImage),
-                background: var(--button-primary-background),
-                foreground: var(--button-primary-foreground),
-                iconForeground: var(--button-primary-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-primary-backgroundImage),
-                background: var(--button-primary-background),
-                foreground: var(--button-primary-foreground),
-                iconForeground: var(--button-primary-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-primary-backgroundImage),
-                background: var(--button-primary-background),
-                foreground: var(--button-primary-foreground),
-                iconForeground: var(--button-primary-iconForeground),
-            ),
-        ),
-        secondary:
-        (
-            background: $_gray-5,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-secondary-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-secondary-backgroundImage),
-                background: var(--button-secondary-background),
-                foreground: var(--button-secondary-foreground),
-                iconForeground: var(--button-secondary-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-secondary-backgroundImage),
-                background: var(--button-secondary-background),
-                foreground: var(--button-secondary-foreground),
-                iconForeground: var(--button-secondary-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-secondary-backgroundImage),
-                background: var(--button-secondary-background),
-                foreground: var(--button-secondary-foreground),
-                iconForeground: var(--button-secondary-iconForeground),
-            ),
-        ),
-        info:
-        (
-            background: $_lightBlue,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-info-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-info-backgroundImage),
-                background: var(--button-info-background),
-                foreground: var(--button-info-foreground),
-                iconForeground: var(--button-info-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-info-backgroundImage),
-                background: var(--button-info-background),
-                foreground: var(--button-info-foreground),
-                iconForeground: var(--button-info-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-info-backgroundImage),
-                background: var(--button-info-background),
-                foreground: var(--button-info-foreground),
-                iconForeground: var(--button-info-iconForeground),
-            ),
-        ),
-        default:
-        (
-            background: $_gray-5,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-default-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-default-backgroundImage),
-                background: var(--button-default-background),
-                foreground: var(--button-default-foreground),
-                iconForeground: var(--button-default-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-default-backgroundImage),
-                background: var(--button-default-background),
-                foreground: var(--button-default-foreground),
-                iconForeground: var(--button-default-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-default-backgroundImage),
-                background: var(--button-default-background),
-                foreground: var(--button-default-foreground),
-                iconForeground: var(--button-default-iconForeground),
-            ),
-        ),
-        success:
-        (
-            background: $_green,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-success-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-success-backgroundImage),
-                background: var(--button-success-background),
-                foreground: var(--button-success-foreground),
-                iconForeground: var(--button-success-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-success-backgroundImage),
-                background: var(--button-success-background),
-                foreground: var(--button-success-foreground),
-                iconForeground: var(--button-success-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-success-backgroundImage),
-                background: var(--button-success-background),
-                foreground: var(--button-success-foreground),
-                iconForeground: var(--button-success-iconForeground),
-            ),
-        ),
-        warning:
-        (
-            background: $_orange,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-warning-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-warning-backgroundImage),
-                background: var(--button-warning-background),
-                foreground: var(--button-warning-foreground),
-                iconForeground: var(--button-warning-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-warning-backgroundImage),
-                background: var(--button-warning-background),
-                foreground: var(--button-warning-foreground),
-                iconForeground: var(--button-warning-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-warning-backgroundImage),
-                background: var(--button-warning-background),
-                foreground: var(--button-warning-foreground),
-                iconForeground: var(--button-warning-iconForeground),
-            ),
-        ),
-        danger:
-        (
-            background: $_red,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-danger-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-danger-backgroundImage),
-                background: var(--button-danger-background),
-                foreground: var(--button-danger-foreground),
-                iconForeground: var(--button-danger-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-danger-backgroundImage),
-                background: var(--button-danger-background),
-                foreground: var(--button-danger-foreground),
-                iconForeground: var(--button-danger-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-danger-backgroundImage),
-                background: var(--button-danger-background),
-                foreground: var(--button-danger-foreground),
-                iconForeground: var(--button-danger-iconForeground),
-            ),
-        ),
-        error:
-        (
-            background: $_red,
-            foreground: $_white,
-            backgroundImage: unset,
-            iconForeground: var(--button-error-background),
-            iconFilter: var(--button-iconFilter),
-            hover:
-            (
-                filter: var(--button-hover-filter),
-                backgroundImage: var(--button-error-backgroundImage),
-                background: var(--button-error-background),
-                foreground: var(--button-error-foreground),
-                iconForeground: var(--button-error-iconForeground),
-            ),
-            focus:
-            (
-                filter: var(--button-focus-filter),
-                backgroundImage: var(--button-error-backgroundImage),
-                background: var(--button-error-background),
-                foreground: var(--button-error-foreground),
-                iconForeground: var(--button-error-iconForeground),
-            ),
-            active:
-            (
-                filter: var(--button-active-filter),
-                backgroundImage: var(--button-error-backgroundImage),
-                background: var(--button-error-background),
-                foreground: var(--button-error-foreground),
-                iconForeground: var(--button-error-iconForeground),
-            ),
-        ),
-        icon:
-        (
-            background: inherit,
-            foreground: $_gray-5,
-            hover:
+            primary:
             (
                 background: inherit,
-                foreground: $_green,
+                foreground: colors.$blue-500,
+            ),
+            danger:
+            (
+                background: inherit,
+                foreground: colors.$red-600,
+            ),
+            warning:
+            (
+                background: inherit,
+                foreground: colors.$orange-800,
+            ),
+            success:
+            (
+                background: inherit,
+                foreground: colors.$green-600,
+            ),
+            info:
+            (
+                background: inherit,
+                foreground: colors.$azure-500,
             ),
         ),
-    ),
-    slideToggle:
-    (
-        track:
+        mainMenu:
         (
-            normal: $_blue,
-            hover: $_lightBlue,
-            pressed: $_azure,
-            focus: $_lightBlue,
+            background: colors.$white,
+            backgroundGradient: colors.$white,
+            backgroundGradient2: colors.$white,
+            foreground: colors.$gray-600,
+            active:
+            (
+                foreground: colors.$white,
+                background: inherit,
+            ),
+            drawer:
+            (
+                background: colors.$white,
+                foreground: colors.$black,
+            )
         ),
-        handle:
+        dialog:
         (
-            normal: $_blue,
-            hover: $_lightBlue,
-            pressed: $_azure,
-            focus: $_lightBlue,
+            border: colors.$gray-700,
+            title:
+            (
+                background: colors.$gray-800,
+                foreground: colors.$gray-50,
+            ),
+            content:
+            (
+                background: colors.$white,
+                foreground: colors.$black,
+            ),
+            closeButton:
+            (
+                hover:
+                (
+                    background: colors.$gray-700,
+                    foreground: colors.$gray-50,
+                ),
+            ),
         ),
-        icon: $_white,
-        foreground: $_gray-1,
-        onPrimary:
+        formGroup:
         (
-            foreground: $_black,
+            direction: column,
         ),
-    ),
-);
-
-@function defineTheme($theme: (), $customization: ())
-{
-    $theme: map.deep-merge($_defaultTheme, $theme);
+        inputs:
+        (
+            columnGap: mixins.getSize($fontSize, 10),
+            rowGap: mixins.getSize($fontSize, 10),
+        ),
+        input:
+        (
+            background: colors.$white,
+            foreground: colors.$gray-600,
+            border: colors.$gray-300,
+            borderRadius: var(--size-borderRadius-fixed-xs),
+            borderStyle: solid,
+            borderWidth: var(--size-1px),
+            boxShadow: none,
+            padding: mixins.getSize($fontSize, 5) mixins.getSize($fontSize, 12),
+            placeholder: colors.$gray-400,
+            groupAddon:
+            (
+                background: color.scale(colors.$gray-50, $lightness: 30%),
+                foreground: inherit,
+                padding: mixins.getSize($fontSize, 5) mixins.getSize($fontSize, 4),
+            ),
+            disabled:
+            (
+                background: colors.$gray-400,
+                foreground: colors.$gray-600,
+                border: colors.$gray-300,
+            ),
+            focus:
+            (
+                background: var(--input-background),
+                foreground: var(--input-foreground),
+                border: var(--input-border),
+            ),
+            invalid:
+            (
+                border: colors.$red-600,
+                outlineWidth: var(--size-2px),
+            ),
+            error:
+            (
+                background: inherit,
+                foreground: colors.$red-600,
+                outline: colors.$red-600,
+            ),
+            errors:
+            (
+                background: inherit,
+                foreground: colors.$red-600,
+                fontSize: 0.7em,
+                padding: 0,
+                border:
+                (
+                    color: transparent,
+                    width: 0,
+                    style: solid,
+                ),
+            ),
+        ),
+        label:
+        (
+            margin: 0 0 mixins.getSize($fontSize, 2),
+            font:
+            (
+                size: 1em,
+                weight: bold,
+            ),
+            invalid:
+            (
+                foreground: colors.$red-600,
+                background: inherit,
+            ),
+        ),
+        select:
+        (
+            tag:
+            (
+                background: colors.$blue-500,
+                foreground: colors.$black,
+                padding: mixins.getSize($fontSize * .8, 1) mixins.getSize($fontSize * .8, 3),
+                fontSize: .8em,
+            ),
+        ),
+        grid:
+        (
+            header:
+            (
+                background: colors.$gray-800,
+                foreground: colors.$white,
+            ),
+            evenRow:
+            (
+                background: colors.$white,
+                foreground: inherit,
+            ),
+            oddRow:
+            (
+                background: colors.$gray-50,
+                foreground: inherit,
+            ),
+        ),
+        separator:
+        (
+            background: inherit,
+            foreground: colors.$gray-600,
+        ),
+        slideToggle:
+        (
+            track:
+            (
+                normal: colors.$blue-800,
+                hover: colors.$azure-500,
+                pressed: colors.$blue-500,
+                focus: colors.$azure-500,
+            ),
+            handle:
+            (
+                normal: colors.$blue-800,
+                hover: colors.$azure-500,
+                pressed: colors.$blue-500,
+                focus: colors.$azure-500,
+            ),
+            icon: colors.$white,
+            foreground: colors.$gray-100,
+            onPrimary:
+            (
+                foreground: colors.$black,
+            ),
+        ),
+        buttons:
+        (
+            columnGap: mixins.getSize($fontSize, 10),
+            rowGap: mixins.getSize($fontSize, 10),
+        ),
+        button:
+        (
+            spaceBetween: mixins.getSize($fontSize, 10),
+            padding: mixins.getSize($fontSize, 4) mixins.getSize($fontSize, 10),
+            letterSpacing: var(--size-1px),
+            textShadow: 0 0,
+            boxShadow: 0 0,
+            transition: all 350ms,
+            border: none,
+            borderRadius: var(--border-radius),
+            fontSize: 1em,
+            fontWeight: normal,
+            minWidth: auto,
+            textTransformation: uppercase,
+            contentGap: var(--size-xs),
+            iconFilter: brightness(80%),
+            hover:
+            (
+                filter: brightness(92%),
+                backgroundImage: unset,
+                background: unset,
+                foreground: unset,
+            ),
+            focus:
+            (
+                filter: brightness(92%),
+                backgroundImage: unset,
+                background: unset,
+                foreground: unset,
+            ),
+            active:
+            (
+                filter: brightness(85%),
+                backgroundImage: unset,
+                background: unset,
+                foreground: unset,
+            ),
+            primary:
+            (
+                background: colors.$green-600,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-primary-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-primary-backgroundImage),
+                    background: var(--button-primary-background),
+                    foreground: var(--button-primary-foreground),
+                    iconForeground: var(--button-primary-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-primary-backgroundImage),
+                    background: var(--button-primary-background),
+                    foreground: var(--button-primary-foreground),
+                    iconForeground: var(--button-primary-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-primary-backgroundImage),
+                    background: var(--button-primary-background),
+                    foreground: var(--button-primary-foreground),
+                    iconForeground: var(--button-primary-iconForeground),
+                ),
+            ),
+            secondary:
+            (
+                background: colors.$gray-500,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-secondary-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-secondary-backgroundImage),
+                    background: var(--button-secondary-background),
+                    foreground: var(--button-secondary-foreground),
+                    iconForeground: var(--button-secondary-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-secondary-backgroundImage),
+                    background: var(--button-secondary-background),
+                    foreground: var(--button-secondary-foreground),
+                    iconForeground: var(--button-secondary-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-secondary-backgroundImage),
+                    background: var(--button-secondary-background),
+                    foreground: var(--button-secondary-foreground),
+                    iconForeground: var(--button-secondary-iconForeground),
+                ),
+            ),
+            info:
+            (
+                background: colors.$azure-500,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-info-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-info-backgroundImage),
+                    background: var(--button-info-background),
+                    foreground: var(--button-info-foreground),
+                    iconForeground: var(--button-info-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-info-backgroundImage),
+                    background: var(--button-info-background),
+                    foreground: var(--button-info-foreground),
+                    iconForeground: var(--button-info-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-info-backgroundImage),
+                    background: var(--button-info-background),
+                    foreground: var(--button-info-foreground),
+                    iconForeground: var(--button-info-iconForeground),
+                ),
+            ),
+            default:
+            (
+                background: colors.$gray-500,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-default-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-default-backgroundImage),
+                    background: var(--button-default-background),
+                    foreground: var(--button-default-foreground),
+                    iconForeground: var(--button-default-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-default-backgroundImage),
+                    background: var(--button-default-background),
+                    foreground: var(--button-default-foreground),
+                    iconForeground: var(--button-default-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-default-backgroundImage),
+                    background: var(--button-default-background),
+                    foreground: var(--button-default-foreground),
+                    iconForeground: var(--button-default-iconForeground),
+                ),
+            ),
+            success:
+            (
+                background: colors.$green-600,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-success-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-success-backgroundImage),
+                    background: var(--button-success-background),
+                    foreground: var(--button-success-foreground),
+                    iconForeground: var(--button-success-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-success-backgroundImage),
+                    background: var(--button-success-background),
+                    foreground: var(--button-success-foreground),
+                    iconForeground: var(--button-success-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-success-backgroundImage),
+                    background: var(--button-success-background),
+                    foreground: var(--button-success-foreground),
+                    iconForeground: var(--button-success-iconForeground),
+                ),
+            ),
+            warning:
+            (
+                background: colors.$orange-800,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-warning-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-warning-backgroundImage),
+                    background: var(--button-warning-background),
+                    foreground: var(--button-warning-foreground),
+                    iconForeground: var(--button-warning-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-warning-backgroundImage),
+                    background: var(--button-warning-background),
+                    foreground: var(--button-warning-foreground),
+                    iconForeground: var(--button-warning-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-warning-backgroundImage),
+                    background: var(--button-warning-background),
+                    foreground: var(--button-warning-foreground),
+                    iconForeground: var(--button-warning-iconForeground),
+                ),
+            ),
+            danger:
+            (
+                background: colors.$red-600,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-danger-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-danger-backgroundImage),
+                    background: var(--button-danger-background),
+                    foreground: var(--button-danger-foreground),
+                    iconForeground: var(--button-danger-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-danger-backgroundImage),
+                    background: var(--button-danger-background),
+                    foreground: var(--button-danger-foreground),
+                    iconForeground: var(--button-danger-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-danger-backgroundImage),
+                    background: var(--button-danger-background),
+                    foreground: var(--button-danger-foreground),
+                    iconForeground: var(--button-danger-iconForeground),
+                ),
+            ),
+            error:
+            (
+                background: colors.$red-600,
+                foreground: colors.$white,
+                backgroundImage: unset,
+                iconForeground: var(--button-error-background),
+                iconFilter: var(--button-iconFilter),
+                hover:
+                (
+                    filter: var(--button-hover-filter),
+                    backgroundImage: var(--button-error-backgroundImage),
+                    background: var(--button-error-background),
+                    foreground: var(--button-error-foreground),
+                    iconForeground: var(--button-error-iconForeground),
+                ),
+                focus:
+                (
+                    filter: var(--button-focus-filter),
+                    backgroundImage: var(--button-error-backgroundImage),
+                    background: var(--button-error-background),
+                    foreground: var(--button-error-foreground),
+                    iconForeground: var(--button-error-iconForeground),
+                ),
+                active:
+                (
+                    filter: var(--button-active-filter),
+                    backgroundImage: var(--button-error-backgroundImage),
+                    background: var(--button-error-background),
+                    foreground: var(--button-error-foreground),
+                    iconForeground: var(--button-error-iconForeground),
+                ),
+            ),
+            icon:
+            (
+                background: inherit,
+                foreground: colors.$gray-500,
+                hover:
+                (
+                    background: inherit,
+                    foreground: colors.$green-600,
+                ),
+            ),
+        ),
+    );
+    
+    $theme: map.deep-merge($defaultTheme, $theme);
     $theme: map.deep-merge($theme, $customization);
 
     @return $theme;

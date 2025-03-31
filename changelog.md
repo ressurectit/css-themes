@@ -1,5 +1,28 @@
 # Changelog
 
+## Version 2.0.0 (2025-03-26)
+
+### Features
+
+- color tokens and other internal variables are now exported and available to use
+
+### BREAKING CHANGES
+
+- refactored all internal values and colors
+- removed *round corners* css styles `border-round`, `top-border-round`, `bottom-border-round`, `left-border-round`, `right-border-round`, `top-left-border-round`, `bottom-left-border-round`, `top-right-border-round`, `bottom-right-border-round`
+    - use definition from `@css-styles/common@2.0.0`
+- removed *text size* css styles `extra-extra-small-text`, `extra-small-text`, `small-text`, `medium-text`, `large-text`, `extra-large-text`, `extra-extra-large-text`, `extra-extra-extra-large-text`
+    - use definition from `@css-styles/common@2.0.0`
+- removed *margins, paddings, gaps*
+    - use definition from `@css-styles/common@2.0.0`
+- removed `popup-block` css class, no replacement
+- removed `weight`s values from `defaultTheme` and css variables for `weight`s
+- removed *blocks* css classes `popup-block`, `primary-block`, `secondary-block`
+- removed *block variables* `--primary-*`, `--secondary-*`
+- removed `primary` and `secondary` values from `defaultTheme` map
+- renamed *highlight block* variables from `--block-*` to `--block-highlight-*`
+- refactored *highlight block*, changed from `block` into `block.highlight` nested variable in `defaultTheme` map
+
 ## Version 1.0.0 (2025-03-26)
 
 ### Features

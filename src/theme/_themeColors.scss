@@ -10,15 +10,9 @@
     --page-background: #{map.get(map.get($theme, 'page'), 'background')};
     --page-foreground: #{map.get(map.get($theme, 'page'), 'foreground')};
     --page-scrollbar: #{map.get(map.get($theme, 'page'), 'scrollbar')};
-    --primary-background: #{map.get(map.get($theme, 'primary'), 'background')};
-    --primary-foreground: #{map.get(map.get($theme, 'primary'), 'foreground')};
-    --primary-scrollbar: #{map.get(map.get($theme, 'primary'), 'scrollbar')};
-    --secondary-background: #{map.get(map.get($theme, 'secondary'), 'background')};
-    --secondary-foreground: #{map.get(map.get($theme, 'secondary'), 'foreground')};
-    --secondary-scrollbar: #{map.get(map.get($theme, 'secondary'), 'scrollbar')};
-    --block-background: #{map.get(map.get($theme, 'block'), 'background')};
-    --block-foreground: #{map.get(map.get($theme, 'block'), 'foreground')};
-    --block-scrollbar: #{map.get(map.get($theme, 'block'), 'scrollbar')};
+    --block-highlight-background: #{map.get(map.get(map.get($theme, 'block'), 'highlight'), 'background')};
+    --block-highlight-foreground: #{map.get(map.get(map.get($theme, 'block'), 'highlight'), 'foreground')};
+    --block-highlight-scrollbar: #{map.get(map.get(map.get($theme, 'block'), 'highlight'), 'scrollbar')};
 }
 
 @mixin buildTitleTheme($theme)
@@ -124,13 +118,6 @@
     --level-warning: #{map.get(map.get($theme, 'level'), 'warning')};
     --level-error: #{map.get(map.get($theme, 'level'), 'error')};
     --level-default: #{map.get(map.get($theme, 'level'), 'default')};
-    --weight-foreground: #{map.get(map.get($theme, 'weight'), 'foreground')};
-    --weight-weight-0: #{map.get(map.get($theme, 'weight'), 'weight-0')};
-    --weight-weight-1: #{map.get(map.get($theme, 'weight'), 'weight-1')};
-    --weight-weight-2: #{map.get(map.get($theme, 'weight'), 'weight-2')};
-    --weight-weight-3: #{map.get(map.get($theme, 'weight'), 'weight-3')};
-    --weight-weight-4: #{map.get(map.get($theme, 'weight'), 'weight-4')};
-    --weight-weight-5: #{map.get(map.get($theme, 'weight'), 'weight-5')};
 }
 
 @mixin buildAlertTheme($theme)
