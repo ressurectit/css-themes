@@ -22,6 +22,7 @@
 - removed `primary` and `secondary` values from `defaultTheme` map
 - renamed *highlight block* variables from `--block-*` to `--block-highlight-*`
 - refactored *highlight block*, changed from `block` into `block.highlight` nested variable in `defaultTheme` map
+- reworked buttons scss
 
 ## Version 1.0.0 (2025-03-26)
 

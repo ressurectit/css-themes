@@ -1,35 +1,113 @@
 @use 'sass:map';
+@use 'sass:meta';
+
+@use '@css-styles/common' as mixins;
 
 @mixin buildFontFamily($theme)
 {
     --font-family: #{map.get($theme, 'fontFamily')};
 }
 
-@mixin buildBlockTheme($theme)
+@mixin buildPageThemeVars($theme)
 {
-    --page-background: #{map.get(map.get($theme, 'page'), 'background')};
-    --page-foreground: #{map.get(map.get($theme, 'page'), 'foreground')};
-    --page-scrollbar: #{map.get(map.get($theme, 'page'), 'scrollbar')};
-    --block-highlight-background: #{map.get(map.get(map.get($theme, 'block'), 'highlight'), 'background')};
-    --block-highlight-foreground: #{map.get(map.get(map.get($theme, 'block'), 'highlight'), 'foreground')};
-    --block-highlight-scrollbar: #{map.get(map.get(map.get($theme, 'block'), 'highlight'), 'scrollbar')};
+    $page: map.get($theme, 'page');
+
+    @each $propName, $propValue in $page
+    {
+        --page-#{$propName}: #{$propValue};
+    }
 }
 
-@mixin buildTitleTheme($theme)
+@mixin buildPageTitleThemeVars($theme)
 {
-    --pageTitle-background: #{map.get(map.get($theme, 'pageTitle'), 'background')};
-    --pageTitle-foreground: #{map.get(map.get($theme, 'pageTitle'), 'foreground')};
-    --pageTitle-padding: #{map.get(map.get($theme, 'pageTitle'), 'padding')};
-    --pageTitle-margin: #{map.get(map.get($theme, 'pageTitle'), 'margin')};
-    --pageTitle-fontSize: #{map.get(map.get($theme, 'pageTitle'), 'fontSize')};
-    --pageTitle-border: #{map.get(map.get($theme, 'pageTitle'), 'border')};
-    --pageTitle-borderTop: #{map.get(map.get($theme, 'pageTitle'), 'borderTop')};
-    --pageTitle-borderRight: #{map.get(map.get($theme, 'pageTitle'), 'borderRight')};
-    --pageTitle-borderBottom: #{map.get(map.get($theme, 'pageTitle'), 'borderBottom')};
-    --pageTitle-borderLeft: #{map.get(map.get($theme, 'pageTitle'), 'borderLeft')};
+    $pageTitle: map.get($theme, 'pageTitle');
+
+    @each $propName, $propValue in $pageTitle
+    {
+        --pageTitle-#{$propName}: #{$propValue};
+    }
 }
 
-@mixin buildMainMenuTheme($theme)
+@mixin buildBlockThemeVars($theme)
+{
+    $blocks: map.get($theme, 'block');
+
+    @each $blockName, $block in $blocks
+    {
+        @each $propName, $propValue in $block
+        {
+            --block-#{$blockName}-#{$propName}: #{$propValue};
+        }
+    }
+}
+
+@mixin buildMiscThemeVars($theme)
+{
+    $miscs: map.get($theme, 'misc');
+
+    @each $miscName, $miscMap in $miscs
+    {
+        @each $miscProp, $miscVal in $miscMap
+        {
+            --misc-#{$miscName}-#{$miscProp}: #{$miscVal};
+        }
+    }
+}
+
+@mixin buildLevelThemeVars($theme)
+{
+    $levels: map.get($theme, 'level');
+
+    @each $levelName, $level in $levels
+    {
+        --level-#{$levelName}: #{$level};
+    }
+}
+
+@mixin buildThemeThemeVars($theme)
+{
+    $themes: map.get($theme, 'theme');
+
+    @each $themeName, $themeColor in $themes
+    {
+        --theme-#{$themeName}: #{$themeColor};
+    }
+}
+
+@mixin buildAlertThemeVars($theme)
+{
+    $alert: map.get($theme, 'alert');
+
+    @each $alertProp, $alertVal in $alert
+    {
+        @if is-map($alertVal)
+        {
+            @each $prop, $propVal in $alertVal
+            {
+                --alert-#{$alertProp}-#{$prop}: #{$propVal};
+            }
+        }
+        @else
+        {
+            --alert-#{$alertProp}: #{$alertVal};
+        }
+    }
+}
+
+@mixin buildTextThemeVars($theme)
+{
+    $text: map.get($theme, 'text');
+
+    @each $textType, $textMap in $text
+    {
+        @each $prop, $propVal in $textMap
+        {
+            --text-#{$textType}-#{$prop}: #{$propVal};
+        }
+    }
+}
+
+@mixin buildMainMenuThemeVars($theme)
 {
     --mainMenu-background: #{map.get(map.get($theme, 'mainMenu'), 'background')};
     --mainMenu-backgroundGradient: #{map.get(map.get($theme, 'mainMenu'), 'backgroundGradient')};
@@ -41,7 +119,7 @@
     --mainMenu-drawer-foreground: #{map.get(map.get(map.get($theme, 'mainMenu'), 'drawer'), 'foreground')};
 }
 
-@mixin buildDialogTheme($theme)
+@mixin buildDialogThemeVars($theme)
 {
     --dialog-border: #{map.get(map.get($theme, 'dialog'), 'border')};
     --dialog-title-background: #{map.get(map.get(map.get($theme, 'dialog'), 'title'), 'background')};
@@ -52,7 +130,7 @@
     --dialog-closeButton-hover-foreground: #{map.get(map.get(map.get(map.get($theme, 'dialog'), 'closeButton'), 'hover'), 'foreground')};
 }
 
-@mixin buildFormsTheme($theme)
+@mixin buildFormsThemeVars($theme)
 {
     --formGroup-direction: #{map.get(map.get($theme, 'formGroup'), 'direction')};
     --inputs-columnGap: #{map.get(map.get($theme, 'inputs'), 'columnGap')};
@@ -99,7 +177,7 @@
     --select-tag-fontSize: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'fontSize')};
 }
 
-@mixin buildGridTheme($theme)
+@mixin buildGridThemeVars($theme)
 {
     --grid-header-background: #{map.get(map.get(map.get($theme, 'grid'), 'header'), 'background')};
     --grid-header-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'header'), 'foreground')};
@@ -109,46 +187,7 @@
     --grid-oddRow-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'oddRow'), 'foreground')};
 }
 
-@mixin buildMiscTheme($theme)
-{
-    --separator-background: #{map.get(map.get($theme, 'separator'), 'background')};
-    --separator-foreground: #{map.get(map.get($theme, 'separator'), 'foreground')};
-    --level-succes: #{map.get(map.get($theme, 'level'), 'succes')};
-    --level-info: #{map.get(map.get($theme, 'level'), 'info')};
-    --level-warning: #{map.get(map.get($theme, 'level'), 'warning')};
-    --level-error: #{map.get(map.get($theme, 'level'), 'error')};
-    --level-default: #{map.get(map.get($theme, 'level'), 'default')};
-}
-
-@mixin buildAlertTheme($theme)
-{
-    --alert-info-background: #{map.get(map.get(map.get($theme, 'alert'), 'info'), 'background')};
-    --alert-info-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'info'), 'foreground')};
-    --alert-warning-background: #{map.get(map.get(map.get($theme, 'alert'), 'warning'), 'background')};
-    --alert-warning-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'warning'), 'foreground')};
-    --alert-success-background: #{map.get(map.get(map.get($theme, 'alert'), 'success'), 'background')};
-    --alert-success-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'success'), 'foreground')};
-    --alert-danger-background: #{map.get(map.get(map.get($theme, 'alert'), 'danger'), 'background')};
-    --alert-danger-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'danger'), 'foreground')};
-    --alert-error-background: #{map.get(map.get(map.get($theme, 'alert'), 'error'), 'background')};
-    --alert-error-foreground: #{map.get(map.get(map.get($theme, 'alert'), 'error'), 'foreground')};
-}
-
-@mixin buildTextTheme($theme)
-{
-    --text-primary-background: #{map.get(map.get(map.get($theme, 'text'), 'primary'), 'background')};
-    --text-primary-foreground: #{map.get(map.get(map.get($theme, 'text'), 'primary'), 'foreground')};
-    --text-info-background: #{map.get(map.get(map.get($theme, 'text'), 'info'), 'background')};
-    --text-info-foreground: #{map.get(map.get(map.get($theme, 'text'), 'info'), 'foreground')};
-    --text-warning-background: #{map.get(map.get(map.get($theme, 'text'), 'warning'), 'background')};
-    --text-warning-foreground: #{map.get(map.get(map.get($theme, 'text'), 'warning'), 'foreground')};
-    --text-success-background: #{map.get(map.get(map.get($theme, 'text'), 'success'), 'background')};
-    --text-success-foreground: #{map.get(map.get(map.get($theme, 'text'), 'success'), 'foreground')};
-    --text-danger-background: #{map.get(map.get(map.get($theme, 'text'), 'danger'), 'background')};
-    --text-danger-foreground: #{map.get(map.get(map.get($theme, 'text'), 'danger'), 'foreground')};
-}
-
-@mixin buildButtonTheme($theme)
+@mixin buildButtonThemeVars($theme)
 {
     $buttonTypes: 'primary', 'secondary', 'info', 'default', 'success', 'warning', 'danger', 'error';
     $buttonActionTypes: 'hover', 'focus', 'active';
@@ -202,7 +241,7 @@
     --button-icon-hover-foreground: #{map.get(map.get(map.get(map.get($theme, 'button'), 'icon'), 'hover'), 'foreground')};
 }
 
-@mixin buildMatSlideToggleTheme($theme)
+@mixin buildMatSlideToggleThemeVars($theme)
 {
     .mat-mdc-slide-toggle.mat-accent
     {
@@ -221,7 +260,7 @@
     --slideToggle-onPrimary-foreground: #{map.get(map.get(map.get($theme, 'slideToggle'), 'onPrimary'), 'foreground')};
 }
 
-@mixin buildThemeColors($theme)
+@mixin buildThemeVars($theme)
 {
     @include buildFontFamily($theme);
     @include buildBlockTheme($theme);
