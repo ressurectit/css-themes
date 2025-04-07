@@ -1,12 +1,6 @@
-@mixin css-buttons
+@mixin css-buttons($buttonTypes: ('primary', 'success', 'info', 'warning', 'danger'), $states: (onlyContent: only-content))
 {
     //############## BUTTONS SPACING ##############
-
-    .buttons-margin
-    {
-        margin-right: var(--button-spaceBetween);
-    }
-
     .buttons-gap
     {
         column-gap: var(--buttons-columnGap);
@@ -14,30 +8,38 @@
     }
 
     //############## BUTTONS ##############
-
     %btn-base
     {
-        letter-spacing: var(--button-letterSpacing);
-        background-image: none;
+        padding: var(--button-padding);
+        transition: var(--button-transition);
         text-shadow: var(--button-textShadow);
         box-shadow: var(--button-boxShadow);
-        text-transform: var(--button-textTransformation);
-        transition: var(--button-transition);
-        border: var(--button-border);
+        border-width: var(--button-borderWidth);
+        border-style: var(--button-borderStyle);
         border-radius: var(--button-borderRadius);
-        padding: var(--button-padding);
-        font-family: var(--font-family);
-        cursor: pointer;
-        white-space: nowrap;
-        font-size: var(--button-fontSize);
+        font-family: var(--button-fontFamily);
         font-weight: var(--button-fontWeight);
+        line-height: var(--button-lineHeight);
+        letter-spacing: var(--button-letterSpacing);
         min-width: var(--button-minWidth);
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        width: var(--button-width);
+        text-transform: var(--button-textTransformation);
         gap: var(--button-contentGap);
-        text-decoration: none;
+        justify-content: var(--button-justifyContent);
+        align-items: var(--button-alignItems);
+        cursor: var(--button-cursor);
+        white-space: var(--button-whiteSpace);
+        position: var(--button-position);
+        display: var(--button-display);
+        flex-direction: var(--button-flexDirection);
+        text-decoration: var(--button-textDecoration);
+
+        background-image: none;
+
+        .text
+        {
+            font-size: var(--button-fontSize);
+        }
     }
 
     .btn
@@ -47,13 +49,13 @@
         &.disabled,
         &:disabled
         {
-            opacity: 0.75;
-            cursor: not-allowed;
+            opacity: var(--button-disabled-opacity);
+            cursor: var(--button-disabled-cursor);
         }
 
-        &>span
+        &.icon-only
         {
-            position: relative;
+            padding: 0;
         }
     }
 
@@ -67,131 +69,115 @@
         }
     }
 
-    .btn-icon
-    {
-        color: var(--button-icon-foreground);
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none;
-
-        &:hover,
-        &:focus
-        {
-            color: var(--button-icon-hover-foreground);
-
-            .double-right-icon
-            {
-                div
-                {
-                    border-color: var(--button-icon-hover-foreground);
-                }
-            }
-        }
-
-        &:active
-        {
-            color: var(--button-icon-hover-foreground);
-            transform: scale(105%);
-        }
-    }
-
-    @include generate-button(('primary', 'secondary', 'info', 'default', 'success', 'warning', 'danger', 'error'));
+    @include generate-button($buttonTypes, $states);
 }
 
-@mixin generate-button($buttonNames)
+@mixin generate-button($buttonTypes, $states)
 {
-    @each $buttonName in $buttonNames
+    //############## GENERATE TYPES ##############
+    @each $buttonType in $buttonTypes
     {
-        .btn-#{$buttonName}
+        .btn-#{$buttonType}
         {
-            &::before 
+            border-color: var(--button-#{$buttonType}-borderColor);
+            background-color: var(--button-#{$buttonType}-background);
+            color: var(--button-#{$buttonType}-foreground);
+
+            .icon
             {
-                content: "";
-                position: absolute;
-                transition: var(--button-transition);
-                top: 0; left: 0;
-                width: 100%; height: 100%;
-                background-color: var(--button-#{$buttonName}-background);
-                background-image: var(--button-#{$buttonName}-backgroundImage);
-                border-radius: var(--button-borderRadius);
+                color: var(--button-#{$buttonType}-icon);
             }
 
-            &:hover:not(:is(.disabled, :disabled))
+            &:hover,
+            &:focus
             {
-                &::before 
-                {
-                    filter: var(--button-#{$buttonName}-hover-filter);
-                    background-color: var(--button-#{$buttonName}-hover-background);
-                    background-image: var(--button-#{$buttonName}-hover-backgroundImage);
-                    color: var(--button-#{$buttonName}-hover-foreground);
-                }
+                border-color: var(--button-#{$buttonType}-hover-borderColor);
+                background-color: var(--button-#{$buttonType}-hover-background);
+                color: var(--button-#{$buttonType}-hover-foreground);
 
-                &>span[class^="fa"],
-                &>span[class^="fas"],
-                &>span[class^="fab"],
-                &>span[class^="far"],
-                &>span[class^="glyphicon"]
+                .icon
                 {
-                    color: var(--button-#{$buttonName}-hover-iconForeground);
+                    color: var(--button-#{$buttonType}-hover-icon);
                 }
             }
 
-            &:focus:not(:is(.disabled, :disabled))
+            &:active
             {
-                &::before 
+                border-color: var(--button-#{$buttonType}-active-borderColor);
+                background-color: var(--button-#{$buttonType}-active-background);
+                color: var(--button-#{$buttonType}-active-foreground);
+
+                .icon
                 {
-                    &::before 
+                    color: var(--button-#{$buttonType}-active-icon);
+                }
+            }
+
+            &.disabled,
+            &:disabled
+            {
+                border-color: var(--button-#{$buttonType}-disabled-borderColor);
+                background-color: var(--button-#{$buttonType}-disabled-background);
+                color: var(--button-#{$buttonType}-disabled-foreground);
+
+                .icon
+                {
+                    color: var(--button-#{$buttonType}-disabled-icon);
+                }
+            }
+
+            //############## GENERATE STATES ##############
+            @each $stateName, $stateClass in $states
+            {
+                &.#{$stateClass}
+                {
+                    border-color: var(--button-#{$buttonType}-#{$stateName}-borderColor);
+                    background-color: var(--button-#{$buttonType}-#{$stateName}-background);
+                    color: var(--button-#{$buttonType}-#{$stateName}-foreground);
+
+                    .icon
                     {
-                        filter: var(--button-#{$buttonName}-focus-filter);
-                        background-color: var(--button-#{$buttonName}-focus-background);
-                        background-image: var(--button-#{$buttonName}-focus-backgroundImage);
-                        color: var(--button-#{$buttonName}-focus-foreground);
+                        color: var(--button-#{$buttonType}-#{$stateName}-icon);
+                    }
+
+                    &:hover,
+                    &:focus
+                    {
+                        border-color: var(--button-#{$buttonType}-#{$stateName}-hover-borderColor);
+                        background-color: var(--button-#{$buttonType}-#{$stateName}-hover-background);
+                        color: var(--button-#{$buttonType}-#{$stateName}-hover-foreground);
+
+                        .icon
+                        {
+                            color: var(--button-#{$buttonType}-#{$stateName}-hover-icon);
+                        }
+                    }
+
+                    &:active
+                    {
+                        border-color: var(--button-#{$buttonType}-#{$stateName}-active-borderColor);
+                        background-color: var(--button-#{$buttonType}-#{$stateName}-active-background);
+                        color: var(--button-#{$buttonType}-#{$stateName}-active-foreground);
+
+                        .icon
+                        {
+                            color: var(--button-#{$buttonType}-#{$stateName}-active-icon);
+                        }
+                    }
+
+                    &.disabled,
+                    &:disabled
+                    {
+                        border-color: var(--button-#{$buttonType}-#{$stateName}-disabled-borderColor);
+                        background-color: var(--button-#{$buttonType}-#{$stateName}-disabled-background);
+                        color: var(--button-#{$buttonType}-#{$stateName}-disabled-foreground);
+
+                        .icon
+                        {
+                            color: var(--button-#{$buttonType}-#{$stateName}-disabled-icon);
+                        }
                     }
                 }
-
-                &>span[class^="fa"],
-                &>span[class^="fas"],
-                &>span[class^="fab"],
-                &>span[class^="far"],
-                &>span[class^="glyphicon"]
-                {
-                    color: var(--button-#{$buttonName}-focus-iconForeground);
-                }
-            }
-
-            &:active:not(:is(.disabled, :disabled))
-            {
-                &::before 
-                {
-                    filter: var(--button-#{$buttonName}-active-filter);
-                    background-color: var(--button-#{$buttonName}-active-background);
-                    background-image: var(--button-#{$buttonName}-active-backgroundImage);
-                    color: var(--button-#{$buttonName}-active-foreground);
-                }
-
-                &>span[class^="fa"],
-                &>span[class^="fas"],
-                &>span[class^="fab"],
-                &>span[class^="far"],
-                &>span[class^="glyphicon"]
-                {
-                    color: var(--button-#{$buttonName}-active-iconForeground);
-                }
-            }
-
-            color: var(--button-#{$buttonName}-foreground);
-
-            &>span[class^="fa"],
-            &>span[class^="fas"],
-            &>span[class^="fab"],
-            &>span[class^="far"],
-            &>span[class^="glyphicon"]
-            {
-                transition: var(--button-transition);
-                color: var(--button-#{$buttonName}-iconForeground);
-                filter: var(--button-#{$buttonName}-iconFilter);
             }
         }
     }

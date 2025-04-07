@@ -14,7 +14,7 @@
         (
             background: colors.$white,
             foreground: colors.$black,
-            scrollbar: color.scale(colors.$white, $lightness: 14%),
+            scrollbar: colors.$gray-200,
         ),
         title:
         (
@@ -306,15 +306,28 @@
             borderWidth: var(--size-1px),
             borderStyle: solid,
             borderRadius: var(--size-borderRadius-xs),
+            fontFamily: var(--font-family),
             fontSize: 1em,
             fontWeight: 600,
-            lineHeight: mixins.getSize($fontSize, 24),
+            lineHeight: 1em,
             letterSpacing: unset,
             minWidth: auto,
             width: auto,
             textTransformation: uppercase,
             contentGap: var(--size-sm),
             justifyContent: center,
+            alignItems: center,
+            cursor: pointer,
+            whiteSpace: nowrap,
+            position: relative,
+            display: flex,
+            flexDirection: row,
+            textDecoration: none,
+            disabled:
+            (
+                opacity: 0.75,
+                cursor: not-allowed,
+            ),
             primary:
             (
                 background: unset,
@@ -337,40 +350,37 @@
                 ),
                 disabled:
                 (
+                    background: inherit,
+                    foreground: inherit,
+                    borderColor: inherit,
+                    icon: inherit,
+                ),
+                onlyContent:
+                (
                     background: unset,
                     foreground: unset,
-                    borderColor: unset,
+                    borderColor: var(--button-primary-onlyContent-background),
                     icon: unset,
-                ),
-                states:
-                (
-                    onlyContent:
+                    hover:
                     (
                         background: unset,
-                        foreground: unset,
-                        borderColor: var(--button-primary-onlyContent-background),
-                        icon: unset,
-                        hover:
-                        (
-                            background: unset,
-                            foreground: var(--button-primary-onlyContent-foreground),
-                            borderColor: var(--button-primary-onlyContent-hover-background),
-                            icon: var(--button-primary-onlyContent-icon),
-                        ),
-                        active:
-                        (
-                            background: unset,
-                            foreground: var(--button-primary-onlyContent-foreground),
-                            borderColor: var(--button-primary-onlyContent-active-background),
-                            icon: var(--button-primary-onlyContent-icon),
-                        ),
-                        disabled:
-                        (
-                            background: unset,
-                            foreground: var(--button-primary-foreground),
-                            borderColor: var(--button-primary-active-background),
-                            icon: var(--button-primary-icon),
-                        ),
+                        foreground: var(--button-primary-onlyContent-foreground),
+                        borderColor: var(--button-primary-onlyContent-hover-background),
+                        icon: var(--button-primary-onlyContent-icon),
+                    ),
+                    active:
+                    (
+                        background: unset,
+                        foreground: var(--button-primary-onlyContent-foreground),
+                        borderColor: var(--button-primary-onlyContent-active-background),
+                        icon: var(--button-primary-onlyContent-icon),
+                    ),
+                    disabled:
+                    (
+                        background: unset,
+                        foreground: var(--button-primary-foreground),
+                        borderColor: var(--button-primary-active-background),
+                        icon: var(--button-primary-icon),
                     ),
                 ),
             ),
@@ -401,35 +411,32 @@
                     borderColor: unset,
                     icon: unset,
                 ),
-                states:
+                onlyContent:
                 (
-                    onlyContent:
+                    background: unset,
+                    foreground: unset,
+                    borderColor: var(--button-success-onlyContent-background),
+                    icon: unset,
+                    hover:
                     (
                         background: unset,
-                        foreground: unset,
-                        borderColor: var(--button-success-onlyContent-background),
-                        icon: unset,
-                        hover:
-                        (
-                            background: unset,
-                            foreground: var(--button-success-onlyContent-foreground),
-                            borderColor: var(--button-success-onlyContent-hover-background),
-                            icon: var(--button-success-onlyContent-icon),
-                        ),
-                        active:
-                        (
-                            background: unset,
-                            foreground: var(--button-success-onlyContent-foreground),
-                            borderColor: var(--button-success-onlyContent-active-background),
-                            icon: var(--button-success-onlyContent-icon),
-                        ),
-                        disabled:
-                        (
-                            background: unset,
-                            foreground: var(--button-success-foreground),
-                            borderColor: var(--button-success-active-background),
-                            icon: var(--button-success-icon),
-                        ),
+                        foreground: var(--button-success-onlyContent-foreground),
+                        borderColor: var(--button-success-onlyContent-hover-background),
+                        icon: var(--button-success-onlyContent-icon),
+                    ),
+                    active:
+                    (
+                        background: unset,
+                        foreground: var(--button-success-onlyContent-foreground),
+                        borderColor: var(--button-success-onlyContent-active-background),
+                        icon: var(--button-success-onlyContent-icon),
+                    ),
+                    disabled:
+                    (
+                        background: unset,
+                        foreground: var(--button-success-foreground),
+                        borderColor: var(--button-success-active-background),
+                        icon: var(--button-success-icon),
                     ),
                 ),
             ),
@@ -460,35 +467,32 @@
                     borderColor: unset,
                     icon: unset,
                 ),
-                states:
+                onlyContent:
                 (
-                    onlyContent:
+                    background: unset,
+                    foreground: unset,
+                    borderColor: var(--button-info-onlyContent-background),
+                    icon: unset,
+                    hover:
                     (
                         background: unset,
-                        foreground: unset,
-                        borderColor: var(--button-info-onlyContent-background),
-                        icon: unset,
-                        hover:
-                        (
-                            background: unset,
-                            foreground: var(--button-info-onlyContent-foreground),
-                            borderColor: var(--button-info-onlyContent-hover-background),
-                            icon: var(--button-info-onlyContent-icon),
-                        ),
-                        active:
-                        (
-                            background: unset,
-                            foreground: var(--button-info-onlyContent-foreground),
-                            borderColor: var(--button-info-onlyContent-active-background),
-                            icon: var(--button-info-onlyContent-icon),
-                        ),
-                        disabled:
-                        (
-                            background: unset,
-                            foreground: var(--button-info-foreground),
-                            borderColor: var(--button-info-active-background),
-                            icon: var(--button-info-icon),
-                        ),
+                        foreground: var(--button-info-onlyContent-foreground),
+                        borderColor: var(--button-info-onlyContent-hover-background),
+                        icon: var(--button-info-onlyContent-icon),
+                    ),
+                    active:
+                    (
+                        background: unset,
+                        foreground: var(--button-info-onlyContent-foreground),
+                        borderColor: var(--button-info-onlyContent-active-background),
+                        icon: var(--button-info-onlyContent-icon),
+                    ),
+                    disabled:
+                    (
+                        background: unset,
+                        foreground: var(--button-info-foreground),
+                        borderColor: var(--button-info-active-background),
+                        icon: var(--button-info-icon),
                     ),
                 ),
             ),
@@ -519,35 +523,32 @@
                     borderColor: unset,
                     icon: unset,
                 ),
-                states:
+                onlyContent:
                 (
-                    onlyContent:
+                    background: unset,
+                    foreground: unset,
+                    borderColor: var(--button-warning-onlyContent-background),
+                    icon: unset,
+                    hover:
                     (
                         background: unset,
-                        foreground: unset,
-                        borderColor: var(--button-warning-onlyContent-background),
-                        icon: unset,
-                        hover:
-                        (
-                            background: unset,
-                            foreground: var(--button-warning-onlyContent-foreground),
-                            borderColor: var(--button-warning-onlyContent-hover-background),
-                            icon: var(--button-warning-onlyContent-icon),
-                        ),
-                        active:
-                        (
-                            background: unset,
-                            foreground: var(--button-warning-onlyContent-foreground),
-                            borderColor: var(--button-warning-onlyContent-active-background),
-                            icon: var(--button-warning-onlyContent-icon),
-                        ),
-                        disabled:
-                        (
-                            background: unset,
-                            foreground: var(--button-warning-foreground),
-                            borderColor: var(--button-warning-active-background),
-                            icon: var(--button-warning-icon),
-                        ),
+                        foreground: var(--button-warning-onlyContent-foreground),
+                        borderColor: var(--button-warning-onlyContent-hover-background),
+                        icon: var(--button-warning-onlyContent-icon),
+                    ),
+                    active:
+                    (
+                        background: unset,
+                        foreground: var(--button-warning-onlyContent-foreground),
+                        borderColor: var(--button-warning-onlyContent-active-background),
+                        icon: var(--button-warning-onlyContent-icon),
+                    ),
+                    disabled:
+                    (
+                        background: unset,
+                        foreground: var(--button-warning-foreground),
+                        borderColor: var(--button-warning-active-background),
+                        icon: var(--button-warning-icon),
                     ),
                 ),
             ),
@@ -578,47 +579,34 @@
                     borderColor: unset,
                     icon: unset,
                 ),
-                states:
+                onlyContent:
                 (
-                    onlyContent:
+                    background: unset,
+                    foreground: unset,
+                    borderColor: var(--button-danger-onlyContent-background),
+                    icon: unset,
+                    hover:
                     (
                         background: unset,
-                        foreground: unset,
-                        borderColor: var(--button-danger-onlyContent-background),
-                        icon: unset,
-                        hover:
-                        (
-                            background: unset,
-                            foreground: var(--button-danger-onlyContent-foreground),
-                            borderColor: var(--button-danger-onlyContent-hover-background),
-                            icon: var(--button-danger-onlyContent-icon),
-                        ),
-                        active:
-                        (
-                            background: unset,
-                            foreground: var(--button-danger-onlyContent-foreground),
-                            borderColor: var(--button-danger-onlyContent-active-background),
-                            icon: var(--button-danger-onlyContent-icon),
-                        ),
-                        disabled:
-                        (
-                            background: unset,
-                            foreground: var(--button-danger-foreground),
-                            borderColor: var(--button-danger-active-background),
-                            icon: var(--button-danger-icon),
-                        ),
+                        foreground: var(--button-danger-onlyContent-foreground),
+                        borderColor: var(--button-danger-onlyContent-hover-background),
+                        icon: var(--button-danger-onlyContent-icon),
+                    ),
+                    active:
+                    (
+                        background: unset,
+                        foreground: var(--button-danger-onlyContent-foreground),
+                        borderColor: var(--button-danger-onlyContent-active-background),
+                        icon: var(--button-danger-onlyContent-icon),
+                    ),
+                    disabled:
+                    (
+                        background: unset,
+                        foreground: var(--button-danger-foreground),
+                        borderColor: var(--button-danger-active-background),
+                        icon: var(--button-danger-icon),
                     ),
                 ),
-            ),
-        ),
-        icon:
-        (
-            background: inherit,
-            foreground: colors.$gray-500,
-            hover:
-            (
-                background: inherit,
-                foreground: colors.$green-600,
             ),
         ),
     );

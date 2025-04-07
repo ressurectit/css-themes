@@ -66,7 +66,7 @@
     div,
     span
     {
-        &.form-control::after
+        &.form-control:empty::after
         {
             content: '\00a0';
         }

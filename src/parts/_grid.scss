@@ -1,4 +1,5 @@
 @use '@css-styles/common';
+@use '@css-styles/common' as mixins;
 
 @mixin css-grid
 {
@@ -34,15 +35,15 @@
 
         .grid-header-css-grid
         {
-            border-top-left-radius: var(--border-radius);
-            border-top-right-radius: var(--border-radius);;
+            border-top-left-radius: var(--size-borderRadius-xs);
+            border-top-right-radius: var(--size-borderRadius-xs);
             background-color: var(--grid-header-background);
             color: var(--grid-header-foreground);
         }
 
         .grid-header-row-css-grid
         {
-            padding: var(--size-6px) var(--size-10px);
+            padding: mixins.getSize($fontSize, 6) mixins.getSize($fontSize, 10);
 
             &>div
             {
@@ -61,7 +62,7 @@
         
         .grid-content-row-css-grid
         {
-            padding: var(--size-4px) var(--size-10px);
+            padding: mixins.getSize($fontSize, 4) mixins.getSize($fontSize, 10);
         }
 
         .grid-content-row-css-grid,
@@ -69,12 +70,12 @@
         {
             &>div
             {
-                padding: 0 var(--size-3px);
+                padding: 0 mixins.getSize($fontSize, 3);
                 white-space: nowrap;
 
                 &>span.fa
                 {
-                    margin-left: var(--size-3px);
+                    margin-left: mixins.getSize($fontSize, 3);
                 }
             }
         }
