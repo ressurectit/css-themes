@@ -11,267 +11,128 @@
 @mixin buildPageThemeVars($theme)
 {
     $page: map.get($theme, 'page');
-
-    @each $propName, $propValue in $page
-    {
-        --page-#{$propName}: #{$propValue};
-    }
+    
+    @include mixins.buildCssVars('--page', $page);
 }
 
 @mixin buildPageTitleThemeVars($theme)
 {
     $pageTitle: map.get($theme, 'pageTitle');
 
-    @each $propName, $propValue in $pageTitle
-    {
-        --pageTitle-#{$propName}: #{$propValue};
-    }
+    @include mixins.buildCssVars('--pageTitle', $pageTitle);
 }
 
 @mixin buildBlockThemeVars($theme)
 {
     $blocks: map.get($theme, 'block');
 
-    @each $blockName, $block in $blocks
-    {
-        @each $propName, $propValue in $block
-        {
-            --block-#{$blockName}-#{$propName}: #{$propValue};
-        }
-    }
+    @include mixins.buildCssVars('--block', $blocks);
 }
 
 @mixin buildMiscThemeVars($theme)
 {
     $miscs: map.get($theme, 'misc');
 
-    @each $miscName, $miscMap in $miscs
-    {
-        @each $miscProp, $miscVal in $miscMap
-        {
-            --misc-#{$miscName}-#{$miscProp}: #{$miscVal};
-        }
-    }
+    @include mixins.buildCssVars('--misc', $miscs);
 }
 
 @mixin buildLevelThemeVars($theme)
 {
     $levels: map.get($theme, 'level');
 
-    @each $levelName, $level in $levels
-    {
-        --level-#{$levelName}: #{$level};
-    }
+    @include mixins.buildCssVars('--level', $levels);
 }
 
 @mixin buildThemeThemeVars($theme)
 {
     $themes: map.get($theme, 'theme');
 
-    @each $themeName, $themeColor in $themes
-    {
-        --theme-#{$themeName}: #{$themeColor};
-    }
+    @include mixins.buildCssVars('--theme', $themes);
 }
 
 @mixin buildAlertThemeVars($theme)
 {
     $alert: map.get($theme, 'alert');
 
-    @each $alertProp, $alertVal in $alert
-    {
-        @if is-map($alertVal)
-        {
-            @each $prop, $propVal in $alertVal
-            {
-                --alert-#{$alertProp}-#{$prop}: #{$propVal};
-            }
-        }
-        @else
-        {
-            --alert-#{$alertProp}: #{$alertVal};
-        }
-    }
+    @include mixins.buildCssVars('--alert', $alert);
 }
 
 @mixin buildTextThemeVars($theme)
 {
     $text: map.get($theme, 'text');
 
-    @each $textType, $textMap in $text
-    {
-        @each $prop, $propVal in $textMap
-        {
-            --text-#{$textType}-#{$prop}: #{$propVal};
-        }
-    }
+    @include mixins.buildCssVars('--text', $text);
 }
 
 @mixin buildMainMenuThemeVars($theme)
 {
-    --mainMenu-background: #{map.get(map.get($theme, 'mainMenu'), 'background')};
-    --mainMenu-backgroundGradient: #{map.get(map.get($theme, 'mainMenu'), 'backgroundGradient')};
-    --mainMenu-backgroundGradient2: #{map.get(map.get($theme, 'mainMenu'), 'backgroundGradient2')};
-    --mainMenu-foreground: #{map.get(map.get($theme, 'mainMenu'), 'foreground')};
-    --mainMenu-active-background: #{map.get(map.get(map.get($theme, 'mainMenu'), 'active'), 'background')};
-    --mainMenu-active-foreground: #{map.get(map.get(map.get($theme, 'mainMenu'), 'active'), 'foreground')};
-    --mainMenu-drawer-background: #{map.get(map.get(map.get($theme, 'mainMenu'), 'drawer'), 'background')};
-    --mainMenu-drawer-foreground: #{map.get(map.get(map.get($theme, 'mainMenu'), 'drawer'), 'foreground')};
+    $mainMenu: map.get($theme, 'mainMenu');
+
+    @include mixins.buildCssVars('--mainMenu', $mainMenu);
 }
 
 @mixin buildDialogThemeVars($theme)
 {
-    --dialog-border: #{map.get(map.get($theme, 'dialog'), 'border')};
-    --dialog-title-background: #{map.get(map.get(map.get($theme, 'dialog'), 'title'), 'background')};
-    --dialog-title-foreground: #{map.get(map.get(map.get($theme, 'dialog'), 'title'), 'foreground')};
-    --dialog-content-background: #{map.get(map.get(map.get($theme, 'dialog'), 'content'), 'background')};
-    --dialog-content-foreground: #{map.get(map.get(map.get($theme, 'dialog'), 'content'), 'foreground')};
-    --dialog-closeButton-hover-background: #{map.get(map.get(map.get(map.get($theme, 'dialog'), 'closeButton'), 'hover'), 'background')};
-    --dialog-closeButton-hover-foreground: #{map.get(map.get(map.get(map.get($theme, 'dialog'), 'closeButton'), 'hover'), 'foreground')};
+    $dialog: map.get($theme, 'dialog');
+
+    @include mixins.buildCssVars('--dialog', $dialog);
 }
 
 @mixin buildFormsThemeVars($theme)
 {
-    --formGroup-direction: #{map.get(map.get($theme, 'formGroup'), 'direction')};
-    --inputs-columnGap: #{map.get(map.get($theme, 'inputs'), 'columnGap')};
-    --inputs-rowGap: #{map.get(map.get($theme, 'inputs'), 'rowGap')};
-    --input-background: #{map.get(map.get($theme, 'input'), 'background')};
-    --input-foreground: #{map.get(map.get($theme, 'input'), 'foreground')};
-    --input-border: #{map.get(map.get($theme, 'input'), 'border')};
-    --input-borderRadius: #{map.get(map.get($theme, 'input'), 'borderRadius')};
-    --input-borderStyle: #{map.get(map.get($theme, 'input'), 'borderStyle')};
-    --input-borderWidth: #{map.get(map.get($theme, 'input'), 'borderWidth')};
-    --input-boxShadow: #{map.get(map.get($theme, 'input'), 'boxShadow')};
-    --input-padding: #{map.get(map.get($theme, 'input'), 'padding')};
-    --input-placeholder: #{map.get(map.get($theme, 'input'), 'placeholder')};
-    --input-groupAddon-background: #{map.get(map.get(map.get($theme, 'input'), 'groupAddon'), 'background')};
-    --input-groupAddon-foreground: #{map.get(map.get(map.get($theme, 'input'), 'groupAddon'), 'foreground')};
-    --input-groupAddon-padding: #{map.get(map.get(map.get($theme, 'input'), 'groupAddon'), 'padding')};
-    --input-disabled-background: #{map.get(map.get(map.get($theme, 'input'), 'disabled'), 'background')};
-    --input-disabled-foreground: #{map.get(map.get(map.get($theme, 'input'), 'disabled'), 'foreground')};
-    --input-disabled-border: #{map.get(map.get(map.get($theme, 'input'), 'disabled'), 'border')};
-    --input-focus-background: #{map.get(map.get(map.get($theme, 'input'), 'focus'), 'background')};
-    --input-focus-foreground: #{map.get(map.get(map.get($theme, 'input'), 'focus'), 'foreground')};
-    --input-focus-border: #{map.get(map.get(map.get($theme, 'input'), 'focus'), 'border')};
-    --input-invalid-border: #{map.get(map.get(map.get($theme, 'input'), 'invalid'), 'border')};
-    --input-invalid-outlineWidth: #{map.get(map.get(map.get($theme, 'input'), 'invalid'), 'outlineWidth')};
-    --input-error-background: #{map.get(map.get(map.get($theme, 'input'), 'error'), 'background')};
-    --input-error-foreground: #{map.get(map.get(map.get($theme, 'input'), 'error'), 'foreground')};
-    --input-error-outline: #{map.get(map.get(map.get($theme, 'input'), 'error'), 'outline')};
-    --input-errors-background: #{map.get(map.get(map.get($theme, 'input'), 'errors'), 'background')};
-    --input-errors-foreground: #{map.get(map.get(map.get($theme, 'input'), 'errors'), 'foreground')};
-    --input-errors-fontSize: #{map.get(map.get(map.get($theme, 'input'), 'errors'), 'fontSize')};
-    --input-errors-padding: #{map.get(map.get(map.get($theme, 'input'), 'errors'), 'padding')};
-    --input-errors-border-color: #{map.get(map.get(map.get(map.get($theme, 'input'), 'errors'), 'border'), 'color')};
-    --input-errors-border-width: #{map.get(map.get(map.get(map.get($theme, 'input'), 'errors'), 'border'), 'width')};
-    --input-errors-border-style: #{map.get(map.get(map.get(map.get($theme, 'input'), 'errors'), 'border'), 'style')};
-    --label-invalid-background: #{map.get(map.get(map.get($theme, 'label'), 'invalid'), 'background')};
-    --label-invalid-foreground: #{map.get(map.get(map.get($theme, 'label'), 'invalid'), 'foreground')};
-    --label-font-size: #{map.get(map.get(map.get($theme, 'label'), 'font'), 'size')};
-    --label-font-weight: #{map.get(map.get(map.get($theme, 'label'), 'font'), 'weight')};
-    --label-margin: #{map.get(map.get($theme, 'label'), 'margin')};
-    --label-foreground: #{map.get(map.get($theme, 'label'), 'foreground')};
-    --select-tag-background: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'background')};
-    --select-tag-foreground: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'foreground')};
-    --select-tag-padding: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'padding')};
-    --select-tag-fontSize: #{map.get(map.get(map.get($theme, 'select'), 'tag'), 'fontSize')};
+    $formGroup: map.get($theme, 'formGroup');
+
+    @include mixins.buildCssVars('--formGroup', $formGroup);
+
+    $inputs: map.get($theme, 'inputs');
+
+    @include mixins.buildCssVars('--inputs', $inputs);
+
+    $input: map.get($theme, 'input');
+
+    @include mixins.buildCssVars('--input', $input);
+
+    $label: map.get($theme, 'label');
+
+    @include mixins.buildCssVars('--label', $label);
+
+    $select: map.get($theme, 'select');
+
+    @include mixins.buildCssVars('--select', $select);
 }
 
 @mixin buildGridThemeVars($theme)
 {
-    --grid-header-background: #{map.get(map.get(map.get($theme, 'grid'), 'header'), 'background')};
-    --grid-header-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'header'), 'foreground')};
-    --grid-evenRow-background: #{map.get(map.get(map.get($theme, 'grid'), 'evenRow'), 'background')};
-    --grid-evenRow-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'evenRow'), 'foreground')};
-    --grid-oddRow-background: #{map.get(map.get(map.get($theme, 'grid'), 'oddRow'), 'background')};
-    --grid-oddRow-foreground: #{map.get(map.get(map.get($theme, 'grid'), 'oddRow'), 'foreground')};
+    $grid: map.get($theme, 'grid');
+
+    @include mixins.buildCssVars('--grid', $grid);
 }
 
 @mixin buildButtonThemeVars($theme)
 {
-    $buttonTypes: 'primary', 'secondary', 'info', 'default', 'success', 'warning', 'danger', 'error';
-    $buttonActionTypes: 'hover', 'focus', 'active';
+    $buttons: map.get($theme, 'buttons');
 
-    --buttons-columnGap: #{map.get(map.get($theme, 'buttons'), 'columnGap')};
-    --buttons-rowGap: #{map.get(map.get($theme, 'buttons'), 'rowGap')};
-    --button-spaceBetween: #{map.get(map.get($theme, 'button'), 'spaceBetween')};
-    --button-letterSpacing: #{map.get(map.get($theme, 'button'), 'letterSpacing')};
-    --button-textShadow: #{map.get(map.get($theme, 'button'), 'textShadow')};
-    --button-boxShadow: #{map.get(map.get($theme, 'button'), 'boxShadow')};
-    --button-transition: #{map.get(map.get($theme, 'button'), 'transition')};
-    --button-border: #{map.get(map.get($theme, 'button'), 'border')};
-    --button-borderRadius: #{map.get(map.get($theme, 'button'), 'borderRadius')};
-    --button-fontSize: #{map.get(map.get($theme, 'button'), 'fontSize')};
-    --button-fontWeight: #{map.get(map.get($theme, 'button'), 'fontWeight')};
-    --button-minWidth: #{map.get(map.get($theme, 'button'), 'minWidth')};
-    --button-padding: #{map.get(map.get($theme, 'button'), 'padding')};
-    --button-textTransformation: #{map.get(map.get($theme, 'button'), 'textTransformation')};
-    --button-contentGap: #{map.get(map.get($theme, 'button'), 'contentGap')};
-    --button-iconFilter: #{map.get(map.get($theme, 'button'), 'iconFilter')};
+    @include mixins.buildCssVars('--buttons', $buttons);
 
-    @each $buttonActionType in $buttonActionTypes
-    {
-        --button-#{$buttonActionType}-filter: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'filter')};
-        --button-#{$buttonActionType}-backgroundImage: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'backgroundImage')};
-        --button-#{$buttonActionType}-background: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'background')};
-        --button-#{$buttonActionType}-foreground: #{map.get(map.get(map.get($theme, 'button'), $buttonActionType), 'foreground')};
-    }
+    $button: map.get($theme, 'button');
 
-    @each $buttonType in $buttonTypes
-    {
-        --button-#{$buttonType}-background: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'background')};
-        --button-#{$buttonType}-backgroundImage: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'backgroundImage')};
-        --button-#{$buttonType}-foreground: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'foreground')};
-        --button-#{$buttonType}-iconForeground: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'iconForeground')};
-        --button-#{$buttonType}-iconFilter: #{map.get(map.get(map.get($theme, 'button'), $buttonType), 'iconFilter')};
-
-        @each $buttonActionType in $buttonActionTypes
-        {
-            --button-#{$buttonType}-#{$buttonActionType}-filter: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'filter')};
-            --button-#{$buttonType}-#{$buttonActionType}-background: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'background')};
-            --button-#{$buttonType}-#{$buttonActionType}-backgroundImage: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'backgroundImage')};
-            --button-#{$buttonType}-#{$buttonActionType}-foreground: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'foreground')};
-            --button-#{$buttonType}-#{$buttonActionType}-iconForeground: #{map.get(map.get(map.get(map.get($theme, 'button'), $buttonType), $buttonActionType), 'iconForeground')};
-        }
-    }
-
-    --button-icon-background: #{map.get(map.get(map.get($theme, 'button'), 'icon'), 'background')};
-    --button-icon-foreground: #{map.get(map.get(map.get($theme, 'button'), 'icon'), 'foreground')};
-    --button-icon-hover-background: #{map.get(map.get(map.get(map.get($theme, 'button'), 'icon'), 'hover'), 'background')};
-    --button-icon-hover-foreground: #{map.get(map.get(map.get(map.get($theme, 'button'), 'icon'), 'hover'), 'foreground')};
-}
-
-@mixin buildMatSlideToggleThemeVars($theme)
-{
-    .mat-mdc-slide-toggle.mat-accent
-    {
-        --mdc-switch-selected-track-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'track'), 'normal')};
-        --mdc-switch-selected-handle-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'handle'), 'normal')};
-        --mdc-switch-selected-hover-track-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'track'), 'hover')};
-        --mdc-switch-selected-hover-handle-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'handle'), 'hover')};
-        --mdc-switch-selected-pressed-track-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'track'), 'pressed')};
-        --mdc-switch-selected-pressed-handle-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'handle'), 'pressed')};
-        --mdc-switch-selected-focus-track-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'track'), 'focus')};
-        --mdc-switch-selected-focus-handle-color: #{map.get(map.get(map.get($theme, 'slideToggle'), 'handle'), 'focus')};
-        --mdc-switch-selected-icon-color: #{map.get(map.get($theme, 'slideToggle'), 'icon')};
-    }
-
-    --slideToggle-foreground: #{map.get(map.get($theme, 'slideToggle'), 'foreground')};
-    --slideToggle-onPrimary-foreground: #{map.get(map.get(map.get($theme, 'slideToggle'), 'onPrimary'), 'foreground')};
+    @include mixins.buildCssVars('--button', $button);
 }
 
 @mixin buildThemeVars($theme)
 {
     @include buildFontFamily($theme);
-    @include buildBlockTheme($theme);
-    @include buildTitleTheme($theme);
-    @include buildMainMenuTheme($theme);
-    @include buildDialogTheme($theme);
-    @include buildFormsTheme($theme);
-    @include buildGridTheme($theme);
-    @include buildMiscTheme($theme);
-    @include buildAlertTheme($theme);
-    @include buildTextTheme($theme);
-    @include buildButtonTheme($theme);
-    @include buildMatSlideToggleTheme($theme);
+    @include buildPageThemeVars($theme);
+    @include buildPageTitleThemeVars($theme);
+    @include buildBlockThemeVars($theme);
+    @include buildMiscThemeVars($theme);
+    @include buildLevelThemeVars($theme);
+    @include buildThemeThemeVars($theme);
+    @include buildAlertThemeVars($theme);
+    @include buildTextThemeVars($theme);
+    @include buildMainMenuThemeVars($theme);
+    @include buildDialogThemeVars($theme);
+    @include buildFormsThemeVars($theme);
+    @include buildGridThemeVars($theme);
+    @include buildButtonThemeVars($theme);
 }

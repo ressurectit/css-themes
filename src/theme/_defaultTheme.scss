@@ -74,30 +74,40 @@
         ),
         alert:
         (
+            padding: mixins.getSize($fontSize, 6) mixins.getSize($fontSize, 8),
+            borderRadius: var(--size-borderRadius-xs),
+            borderWidth: var(--size-1px),
+            borderStyle: solid,
+            margin: 0,
             info:
             (
                 background: colors.$azure-500,
                 foreground: colors.$white,
+                borderColor: var(--alert-info-background),
             ),
             warning:
             (
                 background: colors.$orange-800,
                 foreground: colors.$white,
+                borderColor: var(--alert-warning-background),
             ),
             success:
             (
                 background: colors.$green-600,
                 foreground: colors.$white,
+                borderColor: var(--alert-success-background),
             ),
             danger:
             (
                 background: colors.$red-600,
                 foreground: colors.$white,
+                borderColor: var(--alert-danger-background),
             ),
             error:
             (
                 background: colors.$red-600,
                 foreground: colors.$white,
+                borderColor: var(--alert-error-background),
             ),
         ),
         text:
@@ -270,29 +280,6 @@
             (
                 background: colors.$gray-50,
                 foreground: inherit,
-            ),
-        ),
-        slideToggle:
-        (
-            track:
-            (
-                normal: colors.$blue-800,
-                hover: colors.$azure-500,
-                pressed: colors.$blue-500,
-                focus: colors.$azure-500,
-            ),
-            handle:
-            (
-                normal: colors.$blue-800,
-                hover: colors.$azure-500,
-                pressed: colors.$blue-500,
-                focus: colors.$azure-500,
-            ),
-            icon: colors.$white,
-            foreground: colors.$gray-100,
-            onPrimary:
-            (
-                foreground: colors.$black,
             ),
         ),
         buttons:
