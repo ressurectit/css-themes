@@ -1,7 +1,6 @@
 @use '@css-styles/common';
-@use '@css-styles/common' as mixins;
 
-@mixin css-grid($fontSize)
+@mixin css-grid
 {
     //############## GRID ##############
 
@@ -43,7 +42,7 @@
 
         .grid-header-row-css-grid
         {
-            padding: mixins.getSize($fontSize, 6) mixins.getSize($fontSize, 10);
+            padding: var(--size-6px) var(--size-10px);
 
             &>div
             {
@@ -62,7 +61,7 @@
         
         .grid-content-row-css-grid
         {
-            padding: mixins.getSize($fontSize, 4) mixins.getSize($fontSize, 10);
+            padding: var(--size-4px) var(--size-10px);
         }
 
         .grid-content-row-css-grid,
@@ -70,12 +69,12 @@
         {
             &>div
             {
-                padding: 0 mixins.getSize($fontSize, 3);
+                padding: 0 var(--size-3px);
                 white-space: nowrap;
 
                 &>span.fa
                 {
-                    margin-left: mixins.getSize($fontSize, 3);
+                    margin-left: var(--size-3px);
                 }
             }
         }
