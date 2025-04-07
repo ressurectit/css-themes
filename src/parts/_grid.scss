@@ -1,7 +1,7 @@
 @use '@css-styles/common';
 @use '@css-styles/common' as mixins;
 
-@mixin css-grid
+@mixin css-grid($fontSize)
 {
     //############## GRID ##############
 
