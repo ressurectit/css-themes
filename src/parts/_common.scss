@@ -29,41 +29,13 @@
         user-select: text;
     }
 
+    .text-selection-disabled
+    {
+        user-select: none;
+    }
+
     .line-height-default
     {
         line-height: 1em;
-    }
-
-    //############## TEXTS ##############
-
-    .text-primary
-    {
-        color: var(--text-primary-foreground);
-        background-color: var(--text-primary-background);
-    }
-
-    .text-danger,
-    .text-error
-    {
-        color: var(--text-danger-foreground);
-        background-color: var(--text-danger-background);
-    }
-
-    .text-warning
-    {
-        color: var(--text-warning-foreground);
-        background-color: var(--text-warning-background);
-    }
-
-    .text-success
-    {
-        color: var(--text-success-foreground);
-        background-color: var(--text-success-background);
-    }
-
-    .text-info
-    {
-        color: var(--text-info-foreground);
-        background-color: var(--text-info-background);
     }
 }

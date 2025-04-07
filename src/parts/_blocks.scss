@@ -8,9 +8,9 @@
     {
         @include mixins.thin-scrollbar-color(--block-highlight-scrollbar);
 
+        padding: var(--block-highlight-padding);
+        border-radius: var(--block-highlight-borderRadius);
         background-color: var(--block-highlight-background);
         color: var(--block-highlight-foreground);
-        padding: var(--size-sm);
-        border-radius: var(--border-radius);
     }
 }

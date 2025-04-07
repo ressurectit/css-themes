@@ -5,19 +5,20 @@
     titled-dialog,
     movable-titled-dialog
     {
-        box-shadow: 0 0 3px var(--dialog-border);
-
         .titled-dialog-title
         {
-            border-top-left-radius: var(--border-radius);
-            border-top-right-radius: var(--border-radius);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            border-top-left-radius: var(--dialog-borderRadius);
+            border-top-right-radius: var(--dialog-borderRadius);
+            text-transform: var(--dialog-title-textTransform);
+            letter-spacing: var(--dialog-title-letterSpacing);
             color: var(--dialog-title-foreground);
             background-color: var(--dialog-title-background);
 
             .close-dialog
             {
+                background-color: var(--dialog-closeButton-background);
+                color: var(--dialog-closeButton-foreground);
+
                 &:hover
                 {
                     background-color: var(--dialog-closeButton-hover-background);
@@ -28,8 +29,8 @@
 
         .titled-dialog-content
         {
-            border-bottom-left-radius: var(--border-radius);
-            border-bottom-right-radius: var(--border-radius);
+            border-bottom-left-radius: var(--dialog-borderRadius);
+            border-bottom-right-radius: var(--dialog-borderRadius);
             background-color: var(--dialog-content-background);
             color: var(--dialog-content-foreground);
             flex: 1;
@@ -72,26 +73,5 @@
     {
         display: flex;
         flex-direction: column;
-    }
-
-    //############## SLIDE TOGGLE ##############
-
-    .mat-mdc-slide-toggle.mat-accent
-    {
-        .mdc-label
-        {
-            color: var(--slideToggle-foreground);
-        }
-    }
-
-    .primary-block
-    {
-        .mat-mdc-slide-toggle.mat-accent
-        {
-            .mdc-label
-            {
-                color: var(--slideToggle-onPrimary-foreground);
-            }
-        }
     }
 }

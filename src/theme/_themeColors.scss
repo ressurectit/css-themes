@@ -15,11 +15,11 @@
     @include mixins.buildCssVars('--page', $page);
 }
 
-@mixin buildPageTitleThemeVars($theme)
+@mixin buildTitleThemeVars($theme)
 {
-    $pageTitle: map.get($theme, 'pageTitle');
+    $title: map.get($theme, 'title');
 
-    @include mixins.buildCssVars('--pageTitle', $pageTitle);
+    @include mixins.buildCssVars('--title', $title);
 }
 
 @mixin buildBlockThemeVars($theme)
@@ -76,6 +76,9 @@
     $dialog: map.get($theme, 'dialog');
 
     @include mixins.buildCssVars('--dialog', $dialog);
+
+    --mdc-dialog-container-shape: 0;
+    --mdc-dialog-container-color: transparent;
 }
 
 @mixin buildFormsThemeVars($theme)
@@ -123,7 +126,7 @@
 {
     @include buildFontFamily($theme);
     @include buildPageThemeVars($theme);
-    @include buildPageTitleThemeVars($theme);
+    @include buildTitleThemeVars($theme);
     @include buildBlockThemeVars($theme);
     @include buildMiscThemeVars($theme);
     @include buildLevelThemeVars($theme);

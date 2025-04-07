@@ -1,0 +1,19 @@
+@mixin css-texts($textTypes: ('primary', 'danger', 'warning', 'success', 'info'))
+{
+    //############## TEXTS ##############
+
+    @each $textType in $textTypes
+    {
+        .text-#{$textType}
+        {
+            color: var(--text-#{$textType}-foreground);
+            background-color: var(--text-#{$textType}-background);
+        }
+
+        .text-#{$textType}-transparent
+        {
+            color: var(--text-#{$textType}-foreground);
+            background-color: inherit;
+        }
+    }
+}

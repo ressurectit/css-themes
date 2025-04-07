@@ -4,21 +4,11 @@
 
     .page-title
     {
-        background-color: var(--pageTitle-background);
-        color: var(--pageTitle-foreground);
-        padding: var(--pageTitle-padding);
-        font-size: var(--pageTitle-fontSize);
-        margin: var(--pageTitle-margin);
-        border: var(--pageTitle-border);
-        border-top: var(--pageTitle-borderTop);
-        border-right: var(--pageTitle-borderRight);
-        border-bottom: var(--pageTitle-borderBottom);
-        border-left: var(--pageTitle-borderLeft);
-
-        .btn-icon
-        {
-            color: var(--pageTitle-foreground);
-        }
+        background-color: var(--title-page-background);
+        color: var(--title-page-foreground);
+        padding: var(--title-page-padding);
+        margin: var(--title-page-margin);
+        font-size: var(--title-page-fontSize);
     }
 
     .section-title

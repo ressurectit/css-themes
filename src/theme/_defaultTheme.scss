@@ -16,28 +16,32 @@
             foreground: colors.$black,
             scrollbar: color.scale(colors.$white, $lightness: 14%),
         ),
-        pageTitle:
+        title:
         (
-            background: colors.$gray-800,
-            foreground: colors.$gray-100,
-            padding: 1rem 1.5rem,
-            margin: var(--size-fixed-sm) 0 0,
-            fontSize: 1.5em,
+            page:
+            (
+                background: colors.$gray-800,
+                foreground: colors.$gray-100,
+                padding: 1rem 1.5rem,
+                margin: var(--size-fixed-sm) 0 0,
+                fontSize: 1.5em,
+            ),
         ),
         block:
         (
             highlight:
             (
+                padding: var(--size-sm),
+                borderRadius: var(--size-borderRadius-xs),
                 background: colors.$white,
                 foreground: colors.$black,
-                scrollbar: color.scale(colors.$white, $lightness: 14%),
+                scrollbar: colors.$gray-200,
             ),
         ),
         misc:
         (
             separator:
             (
-                background: inherit,
                 foreground: colors.$gray-600,
             ),
         ),
@@ -158,10 +162,14 @@
         dialog:
         (
             border: colors.$gray-700,
+            borderRadius: var(--size-borderRadius-xs),
             title:
             (
+                textTransform: uppercase,
+                letterSpacing: var(--size-1px),
                 background: colors.$gray-800,
                 foreground: colors.$gray-50,
+                
             ),
             content:
             (
@@ -170,6 +178,8 @@
             ),
             closeButton:
             (
+                background: colors.$gray-700,
+                foreground: colors.$gray-50,
                 hover:
                 (
                     background: colors.$gray-700,
