@@ -10,6 +10,7 @@
         color: var(--label-foreground);
         background-color: var(--label-background);
         letter-spacing: var(--label-letterSpacing);
+        line-height: var(--label-lineHeight);
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
