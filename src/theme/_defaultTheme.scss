@@ -205,6 +205,7 @@
             border: colors.$gray-300,
             borderRadius: var(--size-borderRadius-fixed-xs),
             borderStyle: solid,
+            letterSpacing: inherit,
             borderWidth: var(--size-1px),
             boxShadow: none,
             padding: mixins.getSize($fontSize, 5) mixins.getSize($fontSize, 12),
