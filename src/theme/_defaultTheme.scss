@@ -191,6 +191,7 @@
         formGroup:
         (
             direction: column,
+            gap: mixins.getSize($fontSize, 2),
         ),
         inputs:
         (
@@ -207,7 +208,12 @@
             borderWidth: var(--size-1px),
             boxShadow: none,
             padding: mixins.getSize($fontSize, 5) mixins.getSize($fontSize, 12),
-            placeholder: colors.$gray-400,
+            placeholder:
+            (
+                foreground: colors.$gray-400,
+                letterSpacing: inherit,
+                opacity: 0.8,
+            ),
             groupAddon:
             (
                 background: color.scale(colors.$gray-50, $lightness: 30%),
@@ -253,7 +259,9 @@
         ),
         label:
         (
-            margin: 0 0 mixins.getSize($fontSize, 2),
+            background: inherit,
+            foreground: inherit,
+            letterSpacing: inherit,
             font:
             (
                 size: 1em,
