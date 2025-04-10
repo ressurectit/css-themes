@@ -116,13 +116,13 @@
             &.disabled,
             &:disabled
             {
-                border-color: var(--button-#{$buttonType}-disabled-borderColor);
-                background-color: var(--button-#{$buttonType}-disabled-background);
-                color: var(--button-#{$buttonType}-disabled-foreground);
+                border-color:var(--button-#{$buttonType}-disabled-borderColor, var(--button-disabled-borderColor));
+                background-color: var(--button-#{$buttonType}-disabled-background, var(--button-disabled-background));
+                color: var(--button-#{$buttonType}-disabled-foreground, var(--button-disabled-foreground));
 
                 .icon
                 {
-                    color: var(--button-#{$buttonType}-disabled-icon);
+                    color: var(--button-#{$buttonType}-disabled-icon, var(--button-disabled-icon));
                 }
             }
 
@@ -168,13 +168,13 @@
                     &.disabled,
                     &:disabled
                     {
-                        border-color: var(--button-#{$buttonType}-#{$stateName}-disabled-borderColor);
-                        background-color: var(--button-#{$buttonType}-#{$stateName}-disabled-background);
-                        color: var(--button-#{$buttonType}-#{$stateName}-disabled-foreground);
+                        border-color: var(--button-#{$buttonType}-#{$stateName}-disabled-borderColor, var(--button-#{$buttonType}-disabled-borderColor, var(--button-disabled-borderColor)));
+                        background-color: var(--button-#{$buttonType}-#{$stateName}-disabled-background, var(--button-#{$buttonType}-disabled-background, var(--button-disabled-background)));
+                        color: var(--button-#{$buttonType}-#{$stateName}-disabled-foreground, var(--button-#{$buttonType}-disabled-foreground, var(--button-disabled-foreground)));
 
                         .icon
                         {
-                            color: var(--button-#{$buttonType}-#{$stateName}-disabled-icon);
+                            color: var(--button-#{$buttonType}-#{$stateName}-disabled-icon, var(--button-#{$buttonType}-disabled-icon, var(--button-disabled-icon)));
                         }
                     }
                 }
