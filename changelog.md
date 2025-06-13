@@ -1,6 +1,6 @@
 # Changelog
 
-## Version 2.0.0 (2025-03-26)
+## Version 2.0.0 (2025-06-13)
 
 ### Features
 

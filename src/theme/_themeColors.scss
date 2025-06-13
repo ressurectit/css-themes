@@ -75,9 +75,6 @@
     $dialog: map.get($theme, 'dialog');
 
     @include mixins.buildCssVars('--dialog', $dialog);
-
-    --mdc-dialog-container-shape: 0;
-    --mdc-dialog-container-color: transparent;
 }
 
 @mixin buildFormsThemeVars($theme)
