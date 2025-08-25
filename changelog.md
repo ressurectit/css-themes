@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 2.1.0 (2025-08-25)
+
+### Features
+
+- new `slideInAnimation` mixin, that provides `.slide-in` css class transition (animation)
+- new `slideOutAnimation` mixin, that provides `.slide-out` css class transition (animation)
+- new `flyInAnimation` mixin, that provides `.fly-in` css class transition (animation)
+- new `flyOutAnimation` mixin, that provides `.fly-out` css class transition (animation)
+- new `fadeInAnimation` mixin, that provides `.fade-in` css class transition (animation)
+- new `fadeOutAnimation` mixin, that provides `.fade-out` css class transition (animation)
+- new `provideAllAnimations` mixin, that provides all available animation css classes
+
 ## Version 2.0.0 (2025-06-13)
 
 ### Features
