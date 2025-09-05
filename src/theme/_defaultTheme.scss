@@ -48,28 +48,28 @@
         ),
         level:
         (
-            succes: colors.$green-600,
-            info: colors.$azure-500,
-            warning: colors.$orange-800,
-            error: colors.$red-600,
+            succes: var(--theme-succes),
+            info: var(--theme-info),
+            warning: var(--theme-warning),
+            error: var(--theme-error),
             default: colors.$gray-500,
         ),
         theme:
         (
-            primary: unset,
-            onPrimary: unset,
-            secondary: unset,
-            onSecondary: unset,
-            tertiary: unset,
-            onTertiary: unset,
-            success: unset,
-            onSuccess: unset,
-            info: unset,
-            onInfo: unset,
-            warning: unset,
-            onWarning: unset,
-            error: unset,
-            onError: unset,
+            primary: colors.$azure-500,
+            onPrimary: colors.$white,
+            secondary: colors.$blue-800,
+            onSecondary: colors.$white,
+            tertiary: colors.$orange-800,
+            onTertiary: colors.$white,
+            success: colors.$green-600,
+            onSuccess: colors.$white,
+            info: colors.$azure-500,
+            onInfo: colors.$white,
+            warning: colors.$orange-800,
+            onWarning: colors.$white,
+            error: colors.$red-600,
+            onError: colors.$white,
             primaryContainer: unset,
             onPrimaryContainer: unset,
             secondaryContainer: unset,
@@ -86,32 +86,32 @@
             margin: 0,
             info:
             (
-                background: colors.$azure-500,
-                foreground: colors.$white,
+                background: var(--theme-info),
+                foreground: var(--theme-onInfo),
                 borderColor: var(--alert-info-background),
             ),
             warning:
             (
-                background: colors.$orange-800,
-                foreground: colors.$white,
+                background: var(--theme-warning),
+                foreground: var(--theme-onWarning),
                 borderColor: var(--alert-warning-background),
             ),
             success:
             (
-                background: colors.$green-600,
-                foreground: colors.$white,
+                background: var(--theme-success),
+                foreground: var(--theme-onSuccess),
                 borderColor: var(--alert-success-background),
             ),
             danger:
             (
-                background: colors.$red-600,
-                foreground: colors.$white,
+                background: var(--theme-error),
+                foreground: var(--theme-onError),
                 borderColor: var(--alert-danger-background),
             ),
             error:
             (
-                background: colors.$red-600,
-                foreground: colors.$white,
+                background: var(--theme-error),
+                foreground: var(--theme-onError),
                 borderColor: var(--alert-error-background),
             ),
         ),
@@ -120,27 +120,27 @@
             primary:
             (
                 background: inherit,
-                foreground: colors.$blue-500,
+                foreground: var(--theme-primary),
             ),
             danger:
             (
                 background: inherit,
-                foreground: colors.$red-600,
+                foreground: var(--theme-error),
             ),
             warning:
             (
                 background: inherit,
-                foreground: colors.$orange-800,
+                foreground: var(--theme-warning),
             ),
             success:
             (
                 background: inherit,
-                foreground: colors.$green-600,
+                foreground: var(--theme-success),
             ),
             info:
             (
                 background: inherit,
-                foreground: colors.$azure-500,
+                foreground: var(--theme-info),
             ),
         ),
         mainMenu:
@@ -365,10 +365,10 @@
                 ),
                 onlyContent:
                 (
-                    background: unset,
-                    foreground: unset,
+                    background: transparent,
+                    foreground: var(--button-primary-foreground),
                     borderColor: var(--button-primary-onlyContent-background),
-                    icon: unset,
+                    icon: var(--button-primary-icon),
                     hover:
                     (
                         background: unset,
@@ -407,10 +407,10 @@
                 ),
                 onlyContent:
                 (
-                    background: unset,
-                    foreground: unset,
+                    background: transparent,
+                    foreground: var(--button-success-foreground),
                     borderColor: var(--button-success-onlyContent-background),
-                    icon: unset,
+                    icon: var(--button-success-icon),
                     hover:
                     (
                         background: unset,
@@ -449,10 +449,10 @@
                 ),
                 onlyContent:
                 (
-                    background: unset,
-                    foreground: unset,
+                    background: transparent,
+                    foreground: var(--button-info-foreground),
                     borderColor: var(--button-info-onlyContent-background),
-                    icon: unset,
+                    icon: var(--button-info-icon),
                     hover:
                     (
                         background: unset,
@@ -491,10 +491,10 @@
                 ),
                 onlyContent:
                 (
-                    background: unset,
-                    foreground: unset,
+                    background: transparent,
+                    foreground: var(--button-warning-foreground),
                     borderColor: var(--button-warning-onlyContent-background),
-                    icon: unset,
+                    icon: var(--button-warning-icon),
                     hover:
                     (
                         background: unset,
@@ -533,10 +533,10 @@
                 ),
                 onlyContent:
                 (
-                    background: unset,
-                    foreground: unset,
+                    background: transparent,
+                    foreground: var(--button-danger-foreground),
                     borderColor: var(--button-danger-onlyContent-background),
-                    icon: unset,
+                    icon: var(--button-danger-icon),
                     hover:
                     (
                         background: unset,

@@ -1,5 +1,59 @@
 # Changelog
 
+## Version 2.2.0 (2025-09-05)
+
+### Feature
+
+ - **default theme**
+    - updated value for `theme.primary` to `$azure-500`
+    - updated value for `theme.secondary` to `$blue-800`
+    - updated value for `theme.tertiary` to `$orange-800`
+    - updated value for `theme.success` to `$green-600`
+    - updated value for `theme.info` to `$azure-500`
+    - updated value for `theme.warning` to `$orange-800`
+    - updated value for `theme.error` to `$red-600`
+    - updated value for `theme.onPrimary` to `$white`
+    - updated value for `theme.onSecondary` to `$white`
+    - updated value for `theme.onTertiary` to `$white`
+    - updated value for `theme.onSuccess` to `$white`
+    - updated value for `theme.onInfo` to `$white`
+    - updated value for `theme.onWarning` to `$white`
+    - updated value for `theme.onError` to `$white`
+    - updated value for `level.succes` now redirects to `theme.succes`
+    - updated value for `level.info` now redirects to `theme.info`
+    - updated value for `level.warning` now redirects to `theme.warning`
+    - updated value for `level.error` now redirects to `theme.error`
+    - updated value for `alert.info.background` now redirects to `theme.info`
+    - updated value for `alert.info.foreground` now redirects to `theme.onInfo`
+    - updated value for `alert.warning.background` now redirects to `theme.warning`
+    - updated value for `alert.warning.foreground` now redirects to `theme.onWarning`
+    - updated value for `alert.success.background` now redirects to `theme.success`
+    - updated value for `alert.success.foreground` now redirects to `theme.onSuccess`
+    - updated value for `alert.danger.background` now redirects to `theme.error`
+    - updated value for `alert.danger.foreground` now redirects to `theme.onError`
+    - updated value for `alert.error.background` now redirects to `theme.error`
+    - updated value for `alert.error.foreground` now redirects to `theme.onError`
+    - updated value for `text.primary.foreground` now redirects to `theme.primary`
+    - updated value for `text.danger.foreground` now redirects to `theme.error`
+    - updated value for `text.warning.foreground` now redirects to `theme.warning`
+    - updated value for `text.success.foreground` now redirects to `theme.success`
+    - updated value for `text.info.foreground` now redirects to `theme.info`
+    - updated value for `button.primary.onlyContent.background` to `transparent`
+    - updated value for `button.success.onlyContent.background` to `transparent`
+    - updated value for `button.info.onlyContent.background` to `transparent`
+    - updated value for `button.warning.onlyContent.background` to `transparent`
+    - updated value for `button.danger.onlyContent.background` to `transparent`
+    - updated value for `button.primary.onlyContent.foreground` now redirects to `button.primary.foreground`
+    - updated value for `button.primary.onlyContent.icon` now redirects to `button.primary.icon`
+    - updated value for `button.success.onlyContent.foreground` now redirects to `button.success.foreground`
+    - updated value for `button.success.onlyContent.icon` now redirects to `button.success.icon`
+    - updated value for `button.info.onlyContent.foreground` now redirects to `button.info.foreground`
+    - updated value for `button.info.onlyContent.icon` now redirects to `button.info.icon`
+    - updated value for `button.warning.onlyContent.foreground` now redirects to `button.warning.foreground`
+    - updated value for `button.warning.onlyContent.icon` now redirects to `button.warning.icon`
+    - updated value for `button.danger.onlyContent.foreground` now redirects to `button.danger.foreground`
+    - updated value for `button.danger.onlyContent.icon` now redirects to `button.danger.icon`
+
 ## Version 2.1.0 (2025-08-25)
 
 ### Features
@@ -62,6 +116,6 @@
 - new `buildMiscTheme` *mixin* which generates css variables for css misc
 - new `buildAlertTheme` *mixin* which generates css variables for css alert
 - new `buildTextTheme` *mixin* which generates css variables for css text
-- new `buildButtonTheme` *mixin* which generates css variables for css buttons 
+- new `buildButtonTheme` *mixin* which generates css variables for css buttons
 - new `buildMatSlideToggleTheme` *mixin* which generates css variables for css mat slide toggle
 - new `buildThemeColors` *mixin* which generates css variables for all theme
