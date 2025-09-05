@@ -366,19 +366,19 @@
                 onlyContent:
                 (
                     background: transparent,
-                    foreground: var(--button-primary-foreground),
+                    foreground: var(--button-primary-background),
                     borderColor: var(--button-primary-onlyContent-background),
-                    icon: var(--button-primary-icon),
+                    icon: var(--button-primary-onlyContent-foreground),
                     hover:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-primary-onlyContent-foreground),
                         borderColor: var(--button-primary-onlyContent-hover-background),
                         icon: var(--button-primary-onlyContent-icon),
                     ),
                     active:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-primary-onlyContent-foreground),
                         borderColor: var(--button-primary-onlyContent-active-background),
                         icon: var(--button-primary-onlyContent-icon),
@@ -408,19 +408,19 @@
                 onlyContent:
                 (
                     background: transparent,
-                    foreground: var(--button-success-foreground),
+                    foreground: var(--button-success-background),
                     borderColor: var(--button-success-onlyContent-background),
-                    icon: var(--button-success-icon),
+                    icon: var(--button-success-onlyContent-foreground),
                     hover:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-success-onlyContent-foreground),
                         borderColor: var(--button-success-onlyContent-hover-background),
                         icon: var(--button-success-onlyContent-icon),
                     ),
                     active:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-success-onlyContent-foreground),
                         borderColor: var(--button-success-onlyContent-active-background),
                         icon: var(--button-success-onlyContent-icon),
@@ -450,19 +450,19 @@
                 onlyContent:
                 (
                     background: transparent,
-                    foreground: var(--button-info-foreground),
+                    foreground: var(--button-info-background),
                     borderColor: var(--button-info-onlyContent-background),
-                    icon: var(--button-info-icon),
+                    icon: var(--button-info-onlyContent-foreground),
                     hover:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-info-onlyContent-foreground),
                         borderColor: var(--button-info-onlyContent-hover-background),
                         icon: var(--button-info-onlyContent-icon),
                     ),
                     active:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-info-onlyContent-foreground),
                         borderColor: var(--button-info-onlyContent-active-background),
                         icon: var(--button-info-onlyContent-icon),
@@ -492,19 +492,19 @@
                 onlyContent:
                 (
                     background: transparent,
-                    foreground: var(--button-warning-foreground),
+                    foreground: var(--button-warning-background),
                     borderColor: var(--button-warning-onlyContent-background),
-                    icon: var(--button-warning-icon),
+                    icon: var(--button-warning-onlyContent-foreground),
                     hover:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-warning-onlyContent-foreground),
                         borderColor: var(--button-warning-onlyContent-hover-background),
                         icon: var(--button-warning-onlyContent-icon),
                     ),
                     active:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-warning-onlyContent-foreground),
                         borderColor: var(--button-warning-onlyContent-active-background),
                         icon: var(--button-warning-onlyContent-icon),
@@ -534,19 +534,19 @@
                 onlyContent:
                 (
                     background: transparent,
-                    foreground: var(--button-danger-foreground),
+                    foreground: var(--button-danger-background),
                     borderColor: var(--button-danger-onlyContent-background),
-                    icon: var(--button-danger-icon),
+                    icon: var(--button-danger-onlyContent-foreground),
                     hover:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-danger-onlyContent-foreground),
                         borderColor: var(--button-danger-onlyContent-hover-background),
                         icon: var(--button-danger-onlyContent-icon),
                     ),
                     active:
                     (
-                        background: unset,
+                        background: transparent,
                         foreground: var(--button-danger-onlyContent-foreground),
                         borderColor: var(--button-danger-onlyContent-active-background),
                         icon: var(--button-danger-onlyContent-icon),

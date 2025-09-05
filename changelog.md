@@ -1,5 +1,31 @@
 # Changelog
 
+## Version 2.2.1 (2025-09-05)
+
+### Bug Fixes
+
+- **default theme**
+    - fixed value of `button.primary.onlyContent.foreground`, now correctly redirects to `button.primary.background`
+    - fixed value of `button.primary.onlyContent.icon`, now correctly redirects to `button.primary.onlyContent.foreground`
+    - fixed value of `button.success.onlyContent.foreground`, now correctly redirects to `button.success.background`
+    - fixed value of `button.success.onlyContent.icon`, now correctly redirects to `button.success.onlyContent.foreground`
+    - fixed value of `button.info.onlyContent.foreground`, now correctly redirects to `button.info.background`
+    - fixed value of `button.info.onlyContent.icon`, now correctly redirects to `button.info.onlyContent.foreground`
+    - fixed value of `button.warning.onlyContent.foreground`, now correctly redirects to `button.warning.background`
+    - fixed value of `button.warning.onlyContent.icon`, now correctly redirects to `button.warning.onlyContent.foreground`
+    - fixed value of `button.danger.onlyContent.foreground`, now correctly redirects to `button.danger.background`
+    - fixed value of `button.danger.onlyContent.icon`, now correctly redirects to `button.danger.onlyContent.foreground`
+    - fixed value of `button.primary.onlyContent.hover.background`, to `transparent`
+    - fixed value of `button.primary.onlyContent.active.background`, to `transparent`
+    - fixed value of `button.success.onlyContent.hover.background`, to `transparent`
+    - fixed value of `button.success.onlyContent.active.background`, to `transparent`
+    - fixed value of `button.info.onlyContent.hover.background`, to `transparent`
+    - fixed value of `button.info.onlyContent.active.background`, to `transparent`
+    - fixed value of `button.warning.onlyContent.hover.background`, to `transparent`
+    - fixed value of `button.warning.onlyContent.active.background`, to `transparent`
+    - fixed value of `button.danger.onlyContent.hover.background`, to `transparent`
+    - fixed value of `button.danger.onlyContent.active.background`, to `transparent`
+
 ## Version 2.2.0 (2025-09-05)
 
 ### Feature
