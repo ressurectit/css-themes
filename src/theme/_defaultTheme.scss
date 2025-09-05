@@ -553,6 +553,48 @@
                     ),
                 ),
             ),
+            default:
+            (
+                background: unset,
+                foreground: unset,
+                borderColor: var(--button-default-background),
+                icon: var(--button-default-foreground),
+                hover:
+                (
+                    background: unset,
+                    foreground: var(--button-default-foreground),
+                    borderColor: var(--button-default-hover-background),
+                    icon: var(--button-default-icon),
+                ),
+                active:
+                (
+                    background: unset,
+                    foreground: var(--button-default-foreground),
+                    borderColor: var(--button-default-active-background),
+                    icon: var(--button-default-icon),
+                ),
+                onlyContent:
+                (
+                    background: transparent,
+                    foreground: var(--button-default-background),
+                    borderColor: var(--button-default-onlyContent-background),
+                    icon: var(--button-default-onlyContent-foreground),
+                    hover:
+                    (
+                        background: transparent,
+                        foreground: var(--button-default-onlyContent-foreground),
+                        borderColor: var(--button-default-onlyContent-hover-background),
+                        icon: var(--button-default-onlyContent-icon),
+                    ),
+                    active:
+                    (
+                        background: transparent,
+                        foreground: var(--button-default-onlyContent-foreground),
+                        borderColor: var(--button-default-onlyContent-active-background),
+                        icon: var(--button-default-onlyContent-icon),
+                    ),
+                ),
+            ),
         ),
     );
     

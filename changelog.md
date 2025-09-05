@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 2.3.0 (2025-09-05)
+
+### Feature
+
+ - **default theme**
+    - new type of button `default`
+
 ## Version 2.2.1 (2025-09-05)
 
 ### Bug Fixes
