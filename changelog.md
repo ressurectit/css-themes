@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 2.3.1 (2025-10-17)
+
+### Bug Fixes
+
+- fixed animations, now using `animations` instead of `transitions` except `slide-in` and `slide-out` where `slide-in-animation` was added
+
 ## Version 2.3.0 (2025-09-05)
 
 ### Feature

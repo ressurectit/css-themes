@@ -4,18 +4,58 @@
     {
         interpolate-size: allow-keywords;
         overflow: hidden;
-        transition: all var(--slide-in-height-duration, 400ms) ease-in, 
-                    opacity var(--slide-in-opacity-duration, 300ms) ease-in var(--slide-in-opacity-delay, 100ms);
-        max-height: 1000px;
+        transition: all var(--slide-in-duration, 400ms) ease-in;
+        max-height: var(--slide-in-to-max-height, 1000px);
 
         @starting-style
         {
             height: 0;
             max-height: 0;
             opacity: 0;
-            margin: 0;
-            padding: 0;
-            border-width: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+        }
+    }
+
+    .slide-in-animation
+    {
+        interpolate-size: allow-keywords;
+        overflow: hidden;
+
+        animation-name: slide-in-animation;
+        animation-duration: var(--slide-in-animation-duration, 400ms);
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes slide-in-animation
+    {
+        from
+        {
+            height: 0;
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+        }
+        to
+        {
+            height: var(--slide-in-animation-to-height, auto);
+            max-height: var(--slide-in-animation-to-max-height, 1000px);
+            opacity: var(--slide-in-animation-to-opacity, 1);
+            margin-top: var(--slide-in-animation-to-margin-top, 0);
+            margin-bottom: var(--slide-in-animation-to-margin-bottom, 0);
+            padding-top: var(--slide-in-animation-to-padding-top, 0);
+            padding-bottom: var(--slide-in-animation-to-padding-bottom, 0);
+            border-top-width: var(--slide-in-animation-to-border-top, 0);
+            border-bottom-width: var(--slide-in-animation-to-border-bottom, 0);
         }
     }
 }
@@ -26,8 +66,7 @@
     {
         interpolate-size: allow-keywords;
         overflow: hidden;
-        transition: all var(--slide-out-height-duration, 300ms) ease-out var(--slide-out-height-delay, 100ms), 
-                    opacity var(--slide-out-opacity-duration, 400ms) ease-out;
+        transition: all var(--slide-out-duration, 400ms) ease-out;
 
         height: 0;
         opacity: 0;
@@ -42,13 +81,23 @@
     .fly-in
     {
         position: 'absolute';
-        transform: translateX(0);
-        transition: all var(--fly-in-duration, 400ms) ease-in;
 
-        @starting-style
+        animation-name: fly-in-animation;
+        animation-duration: var(--fly-in-duration, 400ms);
+        animation-timing-function: ease-in;
+    }
+
+    @keyframes fly-in-animation
+    {
+        from
         {
             opacity: var(--fly-in-from-opacity, 0);
             transform: var(--fly-in-from-transform, translateX(25%));
+        }
+        to
+        {
+            opacity: var(--fly-in-to-opacity, 1);
+            transform: translateX(0);
         }
     }
 }
@@ -58,9 +107,24 @@
     .fly-out
     {
         position: 'absolute';
-        opacity: var(--fly-out-to-opacity, 0);
-        transform: var(--fly-out-to-transform, translateX(-25%));
-        transition: all var(--fly-out-duration, 400ms) ease-in;
+
+        animation-name: fly-out-animation;
+        animation-duration: var(--fly-out-duration, 400ms);
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes fly-out-animation
+    {
+        from
+        {
+            opacity: var(--fly-out-from-opacity, 1);
+            transform: translateX(0);
+        }
+        to
+        {
+            opacity: var(--fly-out-to-opacity, 0);
+            transform: translateX(var(--fly-out-to-x, -25%));
+        }
     }
 }
 
@@ -68,11 +132,20 @@
 {
     .fade-in
     {
-        transition: opacity var(--fade-in-duration, 400ms) ease-in;
+        animation-name: fade-in-animation;
+        animation-duration: var(--fade-in-duration, 400ms);
+        animation-timing-function: ease-in;
+    }
 
-        @starting-style
+    @keyframes fade-in-animation
+    {
+        from
         {
             opacity: var(--fade-in-from-opacity, 0);
+        }
+        to
+        {
+            opacity: var(--fade-in-to-opacity, 1);
         }
     }
 }
@@ -81,8 +154,21 @@
 {
     .fade-out
     {
-        opacity: var(--fade-out-to-opacity, 0);
-        transition: opacity var(--fade-out-duration, 400ms) ease-out;
+        animation-name: fade-out-animation;
+        animation-duration: var(--fade-out-duration, 400ms);
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes fade-out-animation
+    {
+        from
+        {
+            opacity: var(--fade-out-from-opacity, 1);
+        }
+        to
+        {
+            opacity: var(--fade-out-to-opacity, 0);
+        }
     }
 }
 
