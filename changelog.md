@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 2.4.0 (2025-09-05)
+
+### Feature
+
+- updated `css-blocks` *mixin* which now supports custom types. Defaults to `highlight`.
+
 ## Version 2.3.1 (2025-10-17)
 
 ### Bug Fixes

@@ -1,16 +1,20 @@
 @use '@css-styles/common' as mixins;
 
-@mixin css-blocks
+@mixin css-blocks($blockTypes: ('highlight'))
 {
     //############## BLOCKS ##############
-    
-    .highlight-block
-    {
-        @include mixins.thin-scrollbar-color(--block-highlight-scrollbar);
 
-        padding: var(--block-highlight-padding);
-        border-radius: var(--block-highlight-borderRadius);
-        background-color: var(--block-highlight-background);
-        color: var(--block-highlight-foreground);
+    @each $block in $blockTypes
+    {
+        
+        .#{$block}-block
+        {
+            @include mixins.thin-scrollbar-color(--block-#{$block}-scrollbar);
+
+            padding: var(--block-#{$block}-padding);
+            border-radius: var(--block-#{$block}-borderRadius);
+            background-color: var(--block-#{$block}-background);
+            color: var(--block-#{$block}-foreground);
+        }
     }
 }
