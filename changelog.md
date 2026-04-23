@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 2.5.0 (2026-04-23)
+
+### Bug Fixes
+
+- fixed `hr` styling, color is now set using correct css variable
+
+### Features
+
+- `control-label` css class now supports margin
+- `form-control` css class now reacts to *focus-within* instead of *focus*
+
 ## Version 2.4.0 (2025-09-05)
 
 ### Feature

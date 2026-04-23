@@ -49,7 +49,7 @@
             border-color: var(--input-disabled-border);
         }
 
-        &:focus
+        &:focus-within
         {
             background-color: var(--input-focus-background);
             color: var(--input-focus-foreground);
