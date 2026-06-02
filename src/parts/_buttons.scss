@@ -42,7 +42,9 @@
         }
     }
 
-    .btn
+    .btn,
+    //new approach, using only one css class instead of two, using "prefix" btn
+    [class|="btn"]
     {
         @extend %btn-base;
 

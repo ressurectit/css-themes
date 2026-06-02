@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 2.6.0 (2026-06-02)
+
+### Features
+
+- new single selector for *buttons* and *alerts* alongside old one, now you dont need second base css class `.btn` or `.alert` to apply base styling just `.btn-*` or `.alert-*`
+
 ## Version 2.5.0 (2026-04-23)
 
 ### Bug Fixes

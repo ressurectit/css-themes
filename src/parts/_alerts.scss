@@ -2,7 +2,9 @@
 {
     //############## ALERTS ##############
 
-    .alert
+    .alert,
+    //new approach, using only one css class instead of two, using "prefix" alert
+    [class|="alert"]
     {
         padding: var(--alert-padding, 6px 8px);
         border-radius: var(--alert-borderRadius, 4px);
