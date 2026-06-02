@@ -351,14 +351,14 @@
                 icon: var(--button-primary-foreground),
                 hover:
                 (
-                    background: hsl(from var(--theme-primary) h s 82%),
+                    background: hsl(from var(--theme-primary) h s 50%),
                     foreground: var(--button-primary-foreground),
                     borderColor: var(--button-primary-hover-background),
                     icon: var(--button-primary-icon),
                 ),
                 active:
                 (
-                    background: hsl(from var(--theme-primary) h s 70%),
+                    background: hsl(from var(--theme-primary) h s 43%),
                     foreground: var(--button-primary-foreground),
                     borderColor: var(--button-primary-active-background),
                     icon: var(--button-primary-icon),
@@ -393,14 +393,14 @@
                 icon: var(--button-success-foreground),
                 hover:
                 (
-                    background: hsl(from var(--theme-success) h s 82%),
+                    background: hsl(from var(--theme-success) h s 50%),
                     foreground: var(--button-success-foreground),
                     borderColor: var(--button-success-hover-background),
                     icon: var(--button-success-icon),
                 ),
                 active:
                 (
-                    background: hsl(from var(--theme-success) h s 70%),
+                    background: hsl(from var(--theme-success) h s 43%),
                     foreground: var(--button-success-foreground),
                     borderColor: var(--button-success-active-background),
                     icon: var(--button-success-icon),
@@ -435,14 +435,14 @@
                 icon: var(--button-info-foreground),
                 hover:
                 (
-                    background: hsl(from var(--theme-info) h s 82%),
+                    background: hsl(from var(--theme-info) h s 50%),
                     foreground: var(--button-info-foreground),
                     borderColor: var(--button-info-hover-background),
                     icon: var(--button-info-icon),
                 ),
                 active:
                 (
-                    background: hsl(from var(--theme-info) h s 70%),
+                    background: hsl(from var(--theme-info) h s 43%),
                     foreground: var(--button-info-foreground),
                     borderColor: var(--button-info-active-background),
                     icon: var(--button-info-icon),
@@ -477,14 +477,14 @@
                 icon: var(--button-warning-foreground),
                 hover:
                 (
-                    background: hsl(from var(--theme-warning) h s 82%),
+                    background: hsl(from var(--theme-warning) h s 50%),
                     foreground: var(--button-warning-foreground),
                     borderColor: var(--button-warning-hover-background),
                     icon: var(--button-warning-icon),
                 ),
                 active:
                 (
-                    background: hsl(from var(--theme-warning) h s 70%),
+                    background: hsl(from var(--theme-warning) h s 43%),
                     foreground: var(--button-warning-foreground),
                     borderColor: var(--button-warning-active-background),
                     icon: var(--button-warning-icon),
@@ -519,14 +519,14 @@
                 icon: var(--button-danger-foreground),
                 hover:
                 (
-                    background: hsl(from var(--theme-danger) h s 82%),
+                    background: hsl(from var(--theme-danger) h s 50%),
                     foreground: var(--button-danger-foreground),
                     borderColor: var(--button-danger-hover-background),
                     icon: var(--button-danger-icon),
                 ),
                 active:
                 (
-                    background: hsl(from var(--theme-danger) h s 70%),
+                    background: hsl(from var(--theme-danger) h s 43%),
                     foreground: var(--button-danger-foreground),
                     borderColor: var(--button-danger-active-background),
                     icon: var(--button-danger-icon),
@@ -561,14 +561,14 @@
                 icon: var(--button-default-foreground),
                 hover:
                 (
-                    background: hsl(from var(--theme-default) h s 82%),
+                    background: hsl(from var(--theme-default) h s 50%),
                     foreground: var(--button-default-foreground),
                     borderColor: var(--button-default-hover-background),
                     icon: var(--button-default-icon),
                 ),
                 active:
                 (
-                    background: hsl(from var(--theme-default) h s 70%),
+                    background: hsl(from var(--theme-default) h s 43%),
                     foreground: var(--button-default-foreground),
                     borderColor: var(--button-default-active-background),
                     icon: var(--button-default-icon),
