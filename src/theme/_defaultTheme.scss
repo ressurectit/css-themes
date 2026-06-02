@@ -345,20 +345,20 @@
             ),
             primary:
             (
-                background: unset,
-                foreground: unset,
+                background: var(--theme-primary),
+                foreground: var(--theme-onPrimary),
                 borderColor: var(--button-primary-background),
                 icon: var(--button-primary-foreground),
                 hover:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-primary) h s 82%),
                     foreground: var(--button-primary-foreground),
                     borderColor: var(--button-primary-hover-background),
                     icon: var(--button-primary-icon),
                 ),
                 active:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-primary) h s 70%),
                     foreground: var(--button-primary-foreground),
                     borderColor: var(--button-primary-active-background),
                     icon: var(--button-primary-icon),
@@ -387,20 +387,20 @@
             ),
             success:
             (
-                background: unset,
-                foreground: unset,
+                background: var(--theme-success),
+                foreground: var(--theme-onSuccess),
                 borderColor: var(--button-success-background),
                 icon: var(--button-success-foreground),
                 hover:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-success) h s 82%),
                     foreground: var(--button-success-foreground),
                     borderColor: var(--button-success-hover-background),
                     icon: var(--button-success-icon),
                 ),
                 active:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-success) h s 70%),
                     foreground: var(--button-success-foreground),
                     borderColor: var(--button-success-active-background),
                     icon: var(--button-success-icon),
@@ -429,20 +429,20 @@
             ),
             info:
             (
-                background: unset,
-                foreground: unset,
+                background: var(--theme-info),
+                foreground: var(--theme-onInfo),
                 borderColor: var(--button-info-background),
                 icon: var(--button-info-foreground),
                 hover:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-info) h s 82%),
                     foreground: var(--button-info-foreground),
                     borderColor: var(--button-info-hover-background),
                     icon: var(--button-info-icon),
                 ),
                 active:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-info) h s 70%),
                     foreground: var(--button-info-foreground),
                     borderColor: var(--button-info-active-background),
                     icon: var(--button-info-icon),
@@ -471,20 +471,20 @@
             ),
             warning:
             (
-                background: unset,
-                foreground: unset,
+                background: var(--theme-warning),
+                foreground: var(--theme-onWarning),
                 borderColor: var(--button-warning-background),
                 icon: var(--button-warning-foreground),
                 hover:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-warning) h s 82%),
                     foreground: var(--button-warning-foreground),
                     borderColor: var(--button-warning-hover-background),
                     icon: var(--button-warning-icon),
                 ),
                 active:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-warning) h s 70%),
                     foreground: var(--button-warning-foreground),
                     borderColor: var(--button-warning-active-background),
                     icon: var(--button-warning-icon),
@@ -513,20 +513,20 @@
             ),
             danger:
             (
-                background: unset,
-                foreground: unset,
+                background: var(--theme-danger),
+                foreground: var(--theme-onDanger),
                 borderColor: var(--button-danger-background),
                 icon: var(--button-danger-foreground),
                 hover:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-danger) h s 82%),
                     foreground: var(--button-danger-foreground),
                     borderColor: var(--button-danger-hover-background),
                     icon: var(--button-danger-icon),
                 ),
                 active:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-danger) h s 70%),
                     foreground: var(--button-danger-foreground),
                     borderColor: var(--button-danger-active-background),
                     icon: var(--button-danger-icon),
@@ -555,20 +555,20 @@
             ),
             default:
             (
-                background: unset,
-                foreground: unset,
+                background: var(--theme-default),
+                foreground: var(--theme-onDefault),
                 borderColor: var(--button-default-background),
                 icon: var(--button-default-foreground),
                 hover:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-default) h s 82%),
                     foreground: var(--button-default-foreground),
                     borderColor: var(--button-default-hover-background),
                     icon: var(--button-default-icon),
                 ),
                 active:
                 (
-                    background: unset,
+                    background: hsl(from var(--theme-default) h s 70%),
                     foreground: var(--button-default-foreground),
                     borderColor: var(--button-default-active-background),
                     icon: var(--button-default-icon),

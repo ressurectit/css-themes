@@ -5,6 +5,7 @@
 ### Features
 
 - new single selector for *buttons* and *alerts* alongside old one, now you dont need second base css class `.btn` or `.alert` to apply base styling just `.btn-*` or `.alert-*`
+- button variants (*background*, *foreground*) have now default values, using coresponding theme variables
 
 ## Version 2.5.0 (2026-04-23)
 
