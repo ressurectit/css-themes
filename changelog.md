@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 2.7.0 (2026-08-28)
+
+### Features
+
+- updated `generate-button` mixin
+    - button variants now support also non color css properties, each of them falls back to base button value when not defined for variant, new css variables `--button-<variant>-padding`, `--button-<variant>-borderWidth`, `--button-<variant>-minWidth`, `--button-<variant>-display`, `--button-<variant>-fontWeight`, `--button-<variant>-lineHeight`, `--button-<variant>-textTransformation`, `--button-<variant>-textDecoration`, `--button-<variant>-whiteSpace`
+    - *hover* and *active* state of button variant now support also `text-decoration`, falls back to variant value and then to base button value, new css variables `--button-<variant>-hover-textDecoration`, `--button-<variant>-active-textDecoration`
+
 ## Version 2.6.0 (2026-06-02)
 
 ### Features

@@ -84,6 +84,15 @@
             border-color: var(--button-#{$buttonType}-borderColor);
             background-color: var(--button-#{$buttonType}-background);
             color: var(--button-#{$buttonType}-foreground);
+            padding: var(--button-#{$buttonType}-padding, var(--button-padding));
+            border-width: var(--button-#{$buttonType}-borderWidth, var(--button-borderWidth));
+            min-width: var(--button-#{$buttonType}-minWidth, var(--button-minWidth));
+            display: var(--button-#{$buttonType}-display, var(--button-display));
+            font-weight: var(--button-#{$buttonType}-fontWeight, var(--button-fontWeight));
+            line-height: var(--button-#{$buttonType}-lineHeight, var(--button-lineHeight));
+            text-transform: var(--button-#{$buttonType}-textTransformation, var(--button-textTransformation));
+            text-decoration: var(--button-#{$buttonType}-textDecoration, var(--button-textDecoration));
+            white-space: var(--button-#{$buttonType}-whiteSpace, var(--button-whiteSpace));
 
             .icon
             {
@@ -96,6 +105,7 @@
                 border-color: var(--button-#{$buttonType}-hover-borderColor);
                 background-color: var(--button-#{$buttonType}-hover-background);
                 color: var(--button-#{$buttonType}-hover-foreground);
+                text-decoration: var(--button-#{$buttonType}-hover-textDecoration, var(--button-#{$buttonType}-textDecoration, var(--button-textDecoration)));
 
                 .icon
                 {
@@ -108,6 +118,7 @@
                 border-color: var(--button-#{$buttonType}-active-borderColor);
                 background-color: var(--button-#{$buttonType}-active-background);
                 color: var(--button-#{$buttonType}-active-foreground);
+                text-decoration: var(--button-#{$buttonType}-active-textDecoration, var(--button-#{$buttonType}-textDecoration, var(--button-textDecoration)));
 
                 .icon
                 {
